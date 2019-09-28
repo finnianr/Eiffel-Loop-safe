@@ -18,7 +18,7 @@ inherit
 		rename
 			reference_value as value
 		redefine
-			initialize, value, is_initialized
+			initialize, is_initialized --, value
 		end
 
 	EL_SHARED_NEW_INSTANCE_TABLE
