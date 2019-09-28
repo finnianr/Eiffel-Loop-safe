@@ -10,7 +10,7 @@ note
 	revision: "8"
 
 deferred class
-	EL_REFLECTED_EXPANDED_FIELD [G]
+	EL_REFLECTED_EXPANDED_FIELD [G -> ANY]
 
 inherit
 	EL_REFLECTED_FIELD
