@@ -16,11 +16,15 @@ inherit
 	SINGLE_MATH
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 		end
 
 create
 	make, make_from_other
-	
+
 feature {NONE} -- Initialization
 
 	make (a_x, a_y: INTEGER)
@@ -35,13 +39,13 @@ feature {NONE} -- Initialization
 		end
 
 	make_from_other (other: EL_GRAPH_POINT)
-			-- 
+			--
 		do
 			x := other.x
 			y := other.y
 		end
 
-		
+
 feature -- Element change
 
 	set_x_y (a_x, a_y: INTEGER)
@@ -54,9 +58,9 @@ feature -- Element change
 			x_set: x = a_x
 			y_set: y = a_y
 		end
-		
+
 	set_from_other (other: EL_GRAPH_POINT)
-			-- 
+			--
 		do
 			x := other.x
 			y := other.y
@@ -65,7 +69,7 @@ feature -- Element change
 feature -- Measurement
 
 	distance (other: EL_GRAPH_POINT): INTEGER
-			-- 
+			--
 		do
 			Result := distance_x_y (other.x, other.y)
 		end

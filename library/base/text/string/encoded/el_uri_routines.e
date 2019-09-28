@@ -16,6 +16,9 @@ inherit
 	EL_PROTOCOL_CONSTANTS
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal
 		end
 
 	EL_ZSTRING_ROUTINES

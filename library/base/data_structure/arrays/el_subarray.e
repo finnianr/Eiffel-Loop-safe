@@ -26,6 +26,10 @@ inherit
 		export
 			{NONE} all
 			{ANY} count, item, valid_index, lower, upper, subcopy_array, is_empty
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 			{ARRAY} shared_area
 		redefine
 			item, subarray, make_from_array, make, subcopy_array

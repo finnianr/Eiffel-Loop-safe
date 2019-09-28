@@ -19,6 +19,10 @@ inherit
 		export
 			{NONE} all
 			{ANY} item, readable, off, before, after, go_i_th, valid_cursor_index
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 		redefine
 			start, finish, go_i_th, move
 		end

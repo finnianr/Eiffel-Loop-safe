@@ -16,6 +16,10 @@ inherit
 	REFLECTOR_CONSTANTS
 		export
 			{EL_REFLECTION_HANDLER} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 		end
 
 feature {EL_REFLECTION_HANDLER} -- Constants
