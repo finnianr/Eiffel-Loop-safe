@@ -40,7 +40,7 @@ inherit
 		rename
 			make_default as make
 		redefine
-			make, field_included, initialize_fields
+			make, initialize_fields --, field_included
 		end
 
 	EL_ZSTRING_CONSTANTS
