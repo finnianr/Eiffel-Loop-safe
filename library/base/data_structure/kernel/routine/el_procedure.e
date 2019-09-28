@@ -31,7 +31,7 @@ convert
 
 feature -- Initialization
 
-	make, set_from_other (other: PROCEDURE)
+	make, set_from_other (other: PROCEDURE [OPEN_ARGS])
 			--
 		do
 			if other.encaps_rout_disp = Default_pointer then
