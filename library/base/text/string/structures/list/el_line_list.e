@@ -27,6 +27,15 @@ feature {NONE} -- Initialization
 			delimiter := Default_delimiter
 		end
 
+feature -- 19.05 Issues
+
+	new_cursor: ITERATION_CURSOR [S]
+			-- <Precursor>
+			-- New {ITERATION_CURSOR} based on Current.
+		do
+			create Result.make (Current)
+		end
+
 feature -- Access
 
 	index: INTEGER
