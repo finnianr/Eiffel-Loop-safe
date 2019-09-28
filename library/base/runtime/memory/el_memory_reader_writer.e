@@ -96,7 +96,7 @@ feature -- Element change
 
 	reset_count
 		do
-			count := 0
+			buffer_position := 0
 		end
 
 	set_data_version (a_data_version: like data_version)
@@ -113,7 +113,7 @@ feature -- Element change
 		-- skip `n' bytes
 		do
 			check_buffer (n)
-			count := count + n
+			buffer_position := count + n
 		end
 
 feature -- Basic operations
@@ -191,7 +191,7 @@ feature -- Read operations
 		do
 			check_buffer (array.count)
 			buffer.read_into_special_natural_8 (array.area, count, 0, array.count)
-			count := count + array.count
+			buffer_position := count + array.count
 		end
 
 	read_to_string_8 (str: STRING; n: INTEGER)
@@ -200,7 +200,7 @@ feature -- Read operations
 			str.grow (n); str.set_count (n)
 			check_buffer (n)
 			buffer.read_into_special_character_8 (str.area, count, 0, n)
-			count := count + n
+			buffer_position := count + n
 		end
 
 feature -- Write operations
@@ -227,7 +227,7 @@ feature -- Write operations
 				l_pos := l_pos + 1
 				i := i + 1
 			end
-			count := l_pos
+			buffer_position := l_pos
 		end
 
 	write_bytes_from_medium (input: IO_MEDIUM; nb: INTEGER)
@@ -235,14 +235,14 @@ feature -- Write operations
 		do
 			check_buffer (nb)
 			input.read_to_managed_pointer (buffer, count, nb)
-			count := count + nb
+			buffer_position := count + nb
 		end
 
 	write_bytes_from_memory (source: EL_MEMORY_SOURCE; nb: INTEGER)
 		do
 			check_buffer (nb)
 			source.read_to_managed_pointer (buffer, count, nb)
-			count := count + nb
+			buffer_position := count + nb
 		end
 
 	write_natural_8_array (a_data: ARRAY [NATURAL_8])
@@ -254,7 +254,7 @@ feature -- Write operations
 			l_pos := count
 			buffer.put_array (a_data, l_pos)
 			l_pos := l_pos + l_data_size
-			count := l_pos
+			buffer_position := l_pos
 		end
 
 	write_sequence (a_sequence: SEQUENCE [EL_STORABLE])
@@ -306,7 +306,7 @@ feature -- Write operations
 			l_pos := count
 			buffer.put_special_character_8 (array, source_index, l_pos, n)
 			l_pos := l_pos + l_data_size
-			count := l_pos
+			buffer_position := l_pos
 		end
 
 	write_time (time: TIME)
@@ -318,7 +318,7 @@ feature {EL_STORABLE} -- Element change
 
 	set_count (a_count: like count)
 		do
-			count := a_count
+			buffer_position := a_count
 		end
 
 feature {NONE} -- Buffer update
