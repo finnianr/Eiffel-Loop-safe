@@ -124,33 +124,25 @@ feature -- 19.05
 	prepend_integer (i: INTEGER)
 			-- Prepend the string representation of `i' at front.
 		do
-			Result := new_string (count + i.out.count)
-			Result.append (Current)
-			Result.prepend_string_general (i.out)
+			Current.prepend_string_general (i.out)
 		end
 
 	prepend_double (d: REAL_64)
 			-- Prepend the string representation of `d' at front.
 		do
-			Result := new_string (count + d.out.count)
-			Result.append (Current)
-			Result.prepend_string_general (d.out)
+			Current.prepend_string_general (d.out)
 		end
 
 	prepend_real (r: REAL_32)
 			-- Prepend the string representation of `r' at front.
 		do
-			Result := new_string (count + r.out.count)
-			Result.append (Current)
-			Result.prepend_string_general (r.out)
+			Current.prepend_string_general (r.out)
 		end
 
 	prepend_boolean (b: BOOLEAN)
 			-- Prepend the string representation of `b' at front.
 		do
-			Result := new_string (count + b.out.count)
-			Result.append (Current)
-			Result.prepend_string_general (b.out)
+			Current.prepend_string_general (b.out)
 		end
 
 feature -- Access
