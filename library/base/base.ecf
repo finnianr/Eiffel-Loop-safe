@@ -39,6 +39,7 @@ $EL_CONTRIB/C/MSC-runtime/spec/$ISE_PLATFORM/msvcr71.dll
 		<library name="base_ext" location="$ISE_LIBRARY\library\base_extension\base_extension.ecf"/>
 		<library name="encoding" location="$ISE_EIFFEL\library\encoding\encoding.ecf"/>
 		<library name="gobo_base" location="$ISE_LIBRARY\contrib\library\gobo\library\kernel\src\library.ecf"/>
+		<library name="gobo_utility" location="$ISE_LIBRARY\contrib\library\gobo\library\utility\src\library.ecf"/>
 		<library name="net" location="$ISE_LIBRARY\library\net\net.ecf"/>
 		<library name="thread" location="$ISE_LIBRARY\library\thread\thread.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time.ecf"/>
