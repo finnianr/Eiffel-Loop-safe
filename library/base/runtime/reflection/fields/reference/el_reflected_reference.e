@@ -11,7 +11,7 @@ note
 	revision: "12"
 
 class
-	EL_REFLECTED_REFERENCE [G]
+	EL_REFLECTED_REFERENCE [G -> ANY]
 
 inherit
 	EL_REFLECTED_FIELD
