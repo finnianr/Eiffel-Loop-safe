@@ -18,6 +18,8 @@ inherit
 			make_from_string as make_from_string_general
 		undefine
 			is_equal
+		select
+			debug_output
 		end
 
 	EL_REFLECTIVELY_SETTABLE_STORABLE
