@@ -1,0 +1,100 @@
+pyxis-doc:
+	version = 1.0; encoding = "ISO-8859-1"
+
+system:
+	configuration_ns = "1-16-0"
+	name = EL_eros; uuid = "229b7574-09aa-11df-87bf-1b0f428786d3" 
+	library_target = EL_eros
+	description:
+		"""
+			Eiffel Remote Object Server (EROS)
+			
+			EROS (for **E**iffel **R**emote **O**bject **S**erver), is an experimental an XML orientated remote
+			procedure call application framework with an original protocol based purely on XML processing instructions
+			rather that any special XML tags.
+			
+			See doc/eros.txt for details
+		"""
+	
+	target:
+		name = EL_eros
+		
+		root:
+			all_classes = true
+
+		option:
+			syntax = standard; full_class_checking = false; void_safety = none
+			trace = false; debug = false; warning = true
+			assertions:
+				precondition = true; postcondition = true; check = true; invariant = true
+
+		library: 
+			name = base; location = "$ISE_LIBRARY/library/base/base.ecf"
+
+		library: 
+			name = net; location = "$ISE_LIBRARY/library/net/net.ecf"
+
+		# Eiffel Loop overrides
+		library:
+			name = vision2; location = "override/ES-vision2.ecf"
+			condition:
+				custom:
+					name = eros_server_enabled; value = true
+
+		# Eiffel Loop libraries
+
+		library:
+			name = EL_base; location = "base/base.ecf"
+
+		library:
+			name = EL_app_manage; location = "app-manage.ecf"
+
+		library:
+			name = EL_evolicity; location = "evolicity.ecf"
+
+		library:
+			name = EL_logging; location = "logging.ecf"
+
+		library:
+			name = EL_net_base; location = "network.ecf"
+
+		library:
+			name = EL_thread; location = "thread.ecf"
+
+		library:
+			name = EL_text_process; location = "text-process.ecf"
+
+		library:
+			name = EL_vision2; location = "vision2-x.ecf"
+			condition:
+				custom:
+					name = eros_server_enabled; value = true
+
+		library:
+			name = EL_xdoc_scanning; location = "xdoc-scanning.ecf"
+
+		# Source code
+		cluster:
+			name = common; location = "network/eros"; recursive = true
+			file_rule:
+				exclude:
+					"/UI$"
+			file_rule:
+				exclude:
+					"/client$"
+			file_rule:
+				exclude:
+					"/server$"
+
+		cluster:
+			name = client; location = "network/eros/client"; recursive = true
+			condition:
+				custom:
+					name = eros_server_enabled; value = false
+
+		cluster:
+			name = server; location = "network/eros/server"; recursive = true
+			condition:
+				custom:
+					name = eros_server_enabled; value = true
+

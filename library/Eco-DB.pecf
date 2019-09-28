@@ -1,0 +1,47 @@
+pyxis-doc:
+	version = 1.0; encoding = "ISO-8859-1"
+
+system:
+	configuration_ns = "1-16-0"
+	name = EL_eco_db; uuid = "229B73E4-09AA-11DF-87BB-93E5E9639079" 
+	library_target = EL_eco_db
+	description: 
+		"""
+			Eco-DB (Eiffel CHAIN Orientated Database)
+
+			''Eco-DB'' is an acronym for ''Eiffel CHAIN Orientated Database''. This library allows the extension (by inheritance)
+			of a container object inheriting the base class [https://www.eiffel.org/files/doc/static/18.01/libraries/base/chain_chart.html CHAIN]
+			so that it assumes many of the charateristics of a database table.
+
+			See doc/eco-db.txt for details
+		"""
+	
+	target:
+		name = EL_eco_db
+		
+		option: 
+			syntax = standard; full_class_checking = false; void_safety = none
+			trace = false; debug = false; warning = true
+
+		root:
+			all_classes = true
+
+		library: 
+			name = base; location = "$ISE_LIBRARY/library/base/base.ecf"
+
+		library:
+			name = time; location = "$ISE_LIBRARY/library/time/time.ecf"
+
+		# Eiffel Loop
+		library:
+			name = EL_base; location = "base/base.ecf"
+
+		library:
+			name = EL_encryption; location = "encryption.ecf"
+
+		# Source code
+		cluster:
+			name = db; location = "persistency/database/eco-db"; recursive = true; readonly = false
+			
+
+

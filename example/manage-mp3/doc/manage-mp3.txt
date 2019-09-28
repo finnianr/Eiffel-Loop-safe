@@ -1,0 +1,41 @@
+This is a full-blown MP3 collection manager that is designed to work in conjunction with the [https://wiki.gnome.org/Apps/Rhythmbox Rhythmbox media player] and has a number of features of particular interest to Tango DJs.
+
+**Manger Syntax**
+
+	el_rhythmbox -manager -config <task-configuration>.pyx
+
+**Features**
+
+* Integrates with the GNOME desktop and the [https://en.wikipedia.org/wiki/GNOME_Terminal GNOME terminal] so you can drag and drop task configuration files on to either a [https://developer.gnome.org/integration-guide/stable/desktop-files.html.en desktop launcher] or the GNOME terminal.
+* Automatically add album art to MP3 files from a directory based on album name or artist name.
+* Collate songs into a directory structure according to song tags:
+
+	<genre>/<artist-name>/<song-title>.<unique id>.mp3
+
+* Import videos in various formats as MP3 files automatically adding ID3 tags according to folder location. Includes facility for mapping video segments to individual MP3 files.
+* Replace songs marked as duplicated, updating all playlists and removing replaced song from collection.
+* Display all ID3 tag comments
+* Create [https://en.wikipedia.org/wiki/Cortina_(tango) tango cortinas] to act as breaks between a set of dance songs.
+* Delete all ID3 tag comments except for the Rhythmbox 'c0' comment. (Gets rid of iTune identifiers etc.)
+* Remove all UFID fields from ID3 tags
+* Store playlists in a special format that can be easily edited in a text editor to add DJ event information.
+* Publish playlists augmented with DJ event information to a website using an Evolicity HTML template.
+* Display [https://en.wikipedia.org/wiki/MusicBrainz MusicBrainz info] for any songs that have it.
+* Display songs with incomplete [http://id3.org/id3v2.3.0#Declared_ID3v2_frames TXXX ID3] tags (User defined text).
+* Archive songs placed in a special "Archive" playlist. This removes them from the main Rhythmbox collection but does not delete them.
+* Append field "album-artist" into main 'c0' comment.
+* Replace 'c0' comment with album-artist info
+* Synchronize all (or selected genres) of music with connected device.
+* Export all playlists and associated MP3 to external device
+* Has a trick where the beats-per-minute ID3 field can be used to generate a silent pause after particular songs in a playlist.
+* Writes a unique audio signature into the MusicBrainz track id to facilitate foolproof device synchronization.
+
+**Manual**
+
+For details on how to use, read the source documentation notes in class [$source RHYTHMBOX_MUSIC_MANAGER_APP].
+
+**Download**
+
+Download the latest executable for ''Ubuntu 14.04'' or ''Linux Mint 17.x'' at the bottom of [https://github.com/finnianr/Eiffel-Loop/releases/latest this page]. You also need the following command line tools to be installed: `sox, swgen, avconv, lame, gvfs-mount'.
+
+Warning: **Use at your own risk.** It is recommended that you have a backup of your MP3 collection and rhythmbox configuration files (Usually in `$HOME/.local/share/rhythmbox'). The developer does not take any responsibility for any data loss that may occur as a result of using ''el_rhythmbox''.

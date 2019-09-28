@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<meta name="digest" content="$crc_digest"/>
+		<meta name="description" content="Source code for class $name"/>
+
+		<title>$name_as_lower</title>
+
+		<link href="$top_dir/css/prism.css" rel="stylesheet"/>
+
+		#include ($favicon_markup_path)
+	</head>
+	<body>
+		<script src="$top_dir/js/prism.js"></script>
+		<p class="fixed">class <a href="$ecf_contents_path#$name" title="Link to class index">$name</a></p>
+		<p><a href="#source_code" title="Skip to class source code">(source code)</a></p>
+#if $is_library then
+	#if $client_examples.count > 0 then
+		<p class="black"><b>Client examples:</b>
+		#across $client_examples as $example loop
+			#if $example.cursor_index > 1 then
+				;&nbsp;
+			#end
+			<a href="$top_dir/$example.item.relative_dir/${example.item.name_as_lower}.html" id="source">$example.item.name</a>
+		#end
+		</p>
+	#end
+#end
+#if $has_fields then
+	<div id="notes">
+		<div id="notes_inner">
+		#across $note_fields as $field loop
+			<h2>$field.item.title</h2>
+			#across $field.item.element_list as $element loop
+			<$element.item.tag_name>$element.item.text</$element.item.tag_name>
+			#end
+		#end
+		</div>
+	</div>
+#end
+		<pre><code class="language-eiffel">$notes_text</code></pre>
+		<a id="source_code"/>
+		<pre><code class="language-eiffel">$class_text</code></pre>
+	</body>
+</html>

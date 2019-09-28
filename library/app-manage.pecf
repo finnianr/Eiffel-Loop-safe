@@ -1,0 +1,104 @@
+pyxis-doc:
+	version = 1.0; encoding = "ISO-8859-1"
+
+system:
+	configuration_ns = "1-16-0"
+	name = EL_app_manage; uuid = "229B70BA-09AA-11DF-87B3-13BAE5C3E690" 
+	library_target = EL_app_manage
+	description:
+		"""
+			Multi-Application Management
+
+			This library has two main purposes:
+
+			1. Manage a collection of small (and possibility related) "mini-applications" as a single Eiffel
+			application.
+			2. Implement the concept of a self-installing/uninstalling application on multiple-platforms.
+
+			See doc/app-manage.txt for details.
+		"""
+	
+	target:
+		name = EL_app_manage
+		root:
+			all_classes = true
+
+		option:
+			namespace = "Eiffel-Loop.Library.Application-management"
+			syntax = standard; full_class_checking = false; void_safety = none
+			trace = false; debug = false; warning = true
+			assertions:
+				precondition = true; postcondition = true; check = true; invariant = true
+
+		library:
+			name = base; location = "$ISE_LIBRARY/library/base/base.ecf"
+
+		library:
+			name = thread; location = "$ISE_LIBRARY/library/thread/thread.ecf"
+
+		library:
+			name = time; location = "$ISE_LIBRARY/library/time/time.ecf"
+
+		library:
+			name = vision2; location="override/ES-vision2.ecf"
+			condition:
+				custom:
+					name = gui_installer_enabled; value = true
+
+		library:
+			name = encoding; location = "$ISE_LIBRARY/library/encoding/encoding.ecf"
+
+		# Eiffel-Loop
+		library:
+			name = EL_base; location = "base/base.ecf"
+
+		library:
+			name = EL_c_api; location = "C-language-interface.ecf"
+			condition:
+				platform:
+					value = windows
+
+		library:
+			name = EL_evolicity; location = "evolicity.ecf"
+
+		library:
+			name = EL_http_client; location = "http-client.ecf"
+
+		library:
+			name = EL_os_command; location = "os-command.ecf"
+
+		library:
+			name = EL_text_process; location = "text-process.ecf"
+
+		library:
+			name = EL_xdoc_scanning; location = "xdoc-scanning.ecf"
+
+		library:
+			name = EL_wel_regedit_x; location = "wel-regedit-x.ecf"
+			condition:
+				platform:
+					value = windows
+
+		# Source code
+		cluster:
+			name = app_manage; location = "runtime/app-manage"; recursive = true
+			file_rule:
+				exclude:
+					"/gui-installer$"
+			file_rule:
+				exclude:
+					"/imp_mswin$"
+				condition:
+					platform:
+						value = unix
+
+			file_rule:
+				exclude:
+					"/imp_unix$"
+				condition:
+					platform:
+						value = windows
+
+
+
+

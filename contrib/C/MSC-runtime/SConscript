@@ -1,0 +1,38 @@
+#	author: "Finnian Reilly"
+#	copyright: "Copyright (c) 2001-2010 Finnian Reilly"
+#	contact: "finnian at eiffel hyphen loop dot com"
+#	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
+#	date: "7 Jan 2010"
+#	revision: "0.1"
+
+import os, sys, platform
+
+from os import path
+
+from eiffel_loop.scons import util
+from eiffel_loop.eiffel import project
+
+from eiffel_loop.scons import package
+
+Import ('env')
+
+#env = Environment ()
+
+if platform.system () == "Windows":
+	build_dir =  project.platform_spec_build_dir ()
+	VariantDir (build_dir, 'source', duplicate=0)
+
+	dll_download_builder = Builder (action = package.get, suffix='.dll', src_suffix='.getdll', emitter = util.complete_targets)
+
+	env.Append (BUILDERS = {'DLL_download' : dll_download_builder})
+	msvcr71_dll = env.DLL_download (path.join (build_dir, 'msvcr71.getdll'))
+
+	env.NoClean (msvcr71_dll)
+	Return ('msvcr71_dll')
+	
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+pyxis-doc:
+	version = 1.0; encoding = "ISO-8859-1"
+
+system:
+	configuration_ns = "1-8-0"
+	name = eiffel2java; uuid = "229b6b92-09aa-11df-87a6-133993654198" 
+	library_target = eiffel2java
+	description:
+		"""
+			Override of ES Eiffel2Java
+
+			Override of Eiffel Software's [https://www.eiffel.org/doc/solutions/Eiffel2Java Eiffel2Java] library
+			for use with the [./library/eiffel2java.html  Eiffel-Loop Eiffel to Java] library.
+		"""
+	
+	target:
+		name = eiffel2java
+		root:
+			all_classes = true
+
+		option:
+			namespace = "Eiffel-Loop.Library.ES.Eiffel-to-Java"; trace = false; debug = true; warning = true; syntax = standard
+			assertions:
+				precondition = true; postcondition = true; check = true; invariant = true
+
+		# Java
+		external_include: 
+			location = "$(JDK_HOME)/include"
+
+		external_include: 
+			location = "$(JDK_HOME)/include/linux"
+			condition:
+				platform:
+					value = unix
+
+		external_include: 
+			location = "$(JDK_HOME)/include/win32"
+			condition:
+				platform:
+					value = windows
+
+		library: 
+			name = "base"; location = "$ISE_LIBRARY/library/base/base.ecf"
+
+		library: 
+			name = api_wrapper; location = "$ISE_LIBRARY/library/api_wrapper/api_wrapper.ecf"
+
+		# Source code
+		cluster:
+			name = EL_override; location = "language_interface/Java"; recursive = true
+			description:
+				"""
+					Override of Eiffel2Java
+
+					Override of Eiffel Software's [https://www.eiffel.org/doc/solutions/Eiffel2Java Eiffel2Java] library
+					for use with the [./library/eiffel2java.html  Eiffel-Loop Eiffel to Java] library.
+				"""
+			file_rule:
+				exclude:
+					"/windows$"
+				condition:
+					platform:
+						value = unix
+
+			file_rule:
+				exclude:
+					"/unix$"
+				condition:
+					platform:
+						value = windows
+
+		cluster:
+			name = eiffel2java; location = "$ISE_LIBRARY/library/Eiffel2Java/"; recursive = true
+			file_rule:
+				exclude:
+					"/jni_environment\.e$"
+					"/shared_jni_environment\.e$"
+					"/java_vm\.e$"
+					"/java_args\.e$"
+					"/java_object_array\.e$"
+

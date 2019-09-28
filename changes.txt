@@ -1,0 +1,45 @@
+Sat 16th Mar 2019, 10:04:29
+Full backup
+
+Thu 21st Mar 2019, 14:54:34
+Fixed FCGI_SERVLET_RESPONSE to return status code
+
+Fri 5th Apr 2019, 16:29:47
+Documentation changes
+
+Wed 24th Apr 2019, 8:16:37
+Laabhair documentation additions
+
+Fri 24th May 2019, 16:31:43
+First doll fractal example
+
+Mon 27th May 2019, 15:01:58
+First head and base doll image rotation
+
+Fri 31st May 2019, 18:30:34
+Bug fix for -duplicity_restore and first rendered fractal
+
+Sun 2nd Jun 2019, 20:44:43
+Made Fractal window resizeable
+
+Thu 13th Jun 2019, 15:39:21
+Fixed once per object bug in EL_CREATEABLE_FROM_NODE_SCAN
+
+Sat 15th Jun 2019, 8:45:21
+Added class el_progress_toggle_button_box
+
+Mon 5th Aug 2019, 12:19:28
+Made string constant classes inherit from EL_ANY_SHARED
+
+Sat 10th Aug 2019, 14:07:13
+Made mirroring more efficient by only rendering the flipped image in EL_ROTATE_PICTURE_BUFFER
+
+Sun 11th Aug 2019, 11:57:07
+Added routine flip to class EL_DRAWABLE_PIXEL_BUFFER with or'd flip state
+
+Sat   14th   Sep   2019, 11:48:43
+Using TUPLE's to specifiy list of factory types
+
+Thu   26th   Sep   2019, 19:03:51
+Changed argument_specs: ARRAY
+

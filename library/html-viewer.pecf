@@ -1,0 +1,60 @@
+pyxis-doc:
+	version = 1.0; encoding = "ISO-8859-1"
+
+system:
+	configuration_ns = "1-16-0"
+	name = EL_html_viewer; uuid = "229b4d24-09aa-11df-876d-3bc274397d13" 
+	library_target = EL_html_viewer
+	readonly = false
+	description:
+		"""
+			XHTML Viewer			
+
+			A basic XHTML text renderer based on the
+			[https://www.eiffel.org/files/doc/static/17.05/libraries/vision2/ev_rich_text_flatshort.html EV_RICH_TEXT]
+			component found in the [https://www.eiffel.org/doc/solutions/EiffelVision_2 EiffelVision2 library].
+
+			It was used to create the help system in the [http://myching.software My Ching software]
+			with page content authored in the Thunderbird email client and then exported as XHTML.
+
+			See class [$source EL_HTML_TEXT] below for supported XHTML tags. This component facilitates
+			the creation of a hyperlinked contents side bar in a split window. 
+		"""
+	
+	target:
+		name = EL_html_viewer
+		root:
+			all_classes = true
+
+		option:
+			syntax = standard; full_class_checking = false; void_safety = none
+			trace = false; debug = false; warning = true
+			assertions:
+				precondition = true; postcondition = true; check = false; invariant = false
+			#precondition = true; postcondition = true; check = true; invariant = true
+
+		library: 
+			name = base; location = "$ISE_LIBRARY/library/base/base.ecf"
+
+		library:
+			name = vision2; location = "override/ES-vision2.ecf"; readonly = false
+	
+		# Eiffel Loop
+		library:
+			name = EL_base; location = "base/base.ecf"
+			readonly = false
+
+		library:
+			name = EL_text_formats; location = "text-formats.ecf"
+
+		library:
+			name = EL_xdoc_scanning; location = "xdoc-scanning.ecf"
+
+		library:
+			name = EL_vision2_x; location = "vision2-x.ecf"; readonly = false
+
+		# Source code
+		cluster:
+			name = viewer; location = "graphic/toolkit/html-viewer"; recursive = true
+
+
