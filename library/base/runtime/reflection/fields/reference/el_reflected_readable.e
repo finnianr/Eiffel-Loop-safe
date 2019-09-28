@@ -10,7 +10,7 @@ note
 	revision: "5"
 
 deferred class
-	EL_REFLECTED_READABLE [G]
+	EL_REFLECTED_READABLE [G -> ANY]
 
 inherit
 	EL_REFLECTED_REFERENCE [G]
