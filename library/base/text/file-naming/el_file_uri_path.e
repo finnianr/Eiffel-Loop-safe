@@ -27,7 +27,7 @@ inherit
 		end
 
 create
-	default_create, make, make_file, make_protocol, make_from_path, make_from_file_path
+	default_create, make, make_file, make_protocol, make_from_path, make_from_file_path, make_from_other
 
 convert
 	make ({ZSTRING, STRING, STRING_32}),

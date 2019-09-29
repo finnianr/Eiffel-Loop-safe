@@ -206,7 +206,9 @@ feature -- Access
 					common_path := common_path.parent
 					back_step_count := back_step_count + 1
 				end
-				Result := relative_path (common_path)
+				check conforms: attached {like Current} relative_path (common_path) as al_rel_common_path then
+					Result := al_rel_common_path
+				end
 				if back_step_count > 0 then
 					Result.set_parent_path (Back_dir_step.multiplied (back_step_count) + Result.parent_path)
 				end
@@ -546,8 +548,8 @@ feature -- Element change
 					l_path.append_character (Separator)
 				end
 				set := Parent_set
-				if set.has_key (l_path) then
-					parent_path := set.found_item
+				if set.has_key (l_path) and then attached {EL_ZSTRING} set.found_item as al_found_item then
+					parent_path := al_found_item
 				else
 					parent_path := l_path.twin
 					set.extend (parent_path)
