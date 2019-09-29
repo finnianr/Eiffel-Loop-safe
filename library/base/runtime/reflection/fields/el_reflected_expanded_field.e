@@ -21,7 +21,9 @@ feature -- Basic operations
 
 	reset (a_object: EL_REFLECTIVE)
 		do
-			set_from_integer (a_object, 0)
+			check type_conformance: attached {EL_REFLECTIVELY_SETTABLE} a_object as al_object then
+				set_from_integer (al_object, 0)
+			end
 		end
 
 feature -- Access
