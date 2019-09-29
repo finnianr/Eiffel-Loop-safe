@@ -28,7 +28,8 @@ feature {NONE} -- Initialization
 
 	make (a_object: EL_REFLECTIVE; a_index: INTEGER_32; a_name: STRING_8)
 		require else
-			has_read_function_for_type: Read_functions_table.has ({G})
+--			has_read_function_for_type: Read_functions_table.has ({G})
+			has_read_function_for_type: attached {like new_item} Read_functions_table.iteration_item (a_index)
 		do
 			Precursor (a_object, a_index, a_name)
 			if attached {like new_item} Read_functions_table.iteration_item (a_index) as al_new_item then
