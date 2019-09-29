@@ -44,7 +44,9 @@ feature {NONE} -- Factory
 
 	new_codec_by_id (id: INTEGER): EL_ZCODEC
 		do
-			Result := Codec_factory.instance_from_type (Codec_types [id], agent {EL_ZCODEC}.make)
+			check has_codec: attached Codec_types [id] as al_codec_type then
+				Result := Codec_factory.instance_from_type (al_codec_type, agent {EL_ZCODEC}.make)
+			end
 		end
 
 feature {NONE} -- Status query
