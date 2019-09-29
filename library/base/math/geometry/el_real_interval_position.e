@@ -21,7 +21,8 @@ inherit
 	REAL_REF
 
 create
-	make
+	make,
+	default_create
 
 feature -- Status report
 

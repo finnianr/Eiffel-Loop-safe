@@ -32,7 +32,8 @@ inherit
 	EL_MODULE_NAMING
 
 create
-	make
+	make,
+	make_table
 
 feature {NONE} -- Initialization
 
