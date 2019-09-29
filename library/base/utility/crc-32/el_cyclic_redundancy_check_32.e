@@ -18,7 +18,7 @@ inherit
 			count as byte_count
 		export
 			{NONE} all
-			{ANY} is_equal
+			{ANY} is_equal, byte_count, copy, item
 		redefine
 			default_create
 		end

@@ -30,7 +30,10 @@ inherit
 			{ANY} is_equal, plus, is_less, is_less_equal, is_greater_equal, is_greater
 			{ANY} append_character, is_empty, wipe_out, share, set_encoded, count, area,
 			capacity, same_string, to_c, to_string_8,
-			Is_string_8, area_lower, set_count, internal_hash_code
+			Is_string_8, area_lower, set_count, internal_hash_code, append_string_general,
+			as_lower, shared_with, append_raw_8, character_32_has, occurrences,
+			character_32_occurrences, is_case_insensitive_equal_general, has_code,
+			case_insensitive_hash_code, mirror
 		end
 
 	EL_MODULE_UTF

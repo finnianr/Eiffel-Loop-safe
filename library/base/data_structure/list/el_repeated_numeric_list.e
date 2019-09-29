@@ -22,7 +22,7 @@ inherit
 			{ANY} deep_copy,
 				deep_twin,
 				is_deep_equal,
-				standard_is_equal, is_empty, go_to, cursor
+				standard_is_equal, is_empty, go_to, cursor, object_comparison, is_equal
 		redefine
 			start, finish, go_i_th, move
 		end
