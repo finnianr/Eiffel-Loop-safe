@@ -26,7 +26,9 @@ feature {NONE} -- Initialization
 	make (a_enclosing_object: like enclosing_object)
 		do
 			Precursor (a_enclosing_object)
-			a_enclosing_object.adjust_field_order (field_array)
+			check conforms: attached {EL_REFLECTIVELY_SETTABLE_STORABLE} a_enclosing_object as al_enclosing_object then
+				al_enclosing_object.adjust_field_order (field_array)
+			end
 		end
 
 feature -- Status query
