@@ -45,7 +45,9 @@ feature {NONE} -- Initialization
 			excluded_fields := new_field_indices_set (a_enclosing_object.Except_fields)
 			hidden_fields := new_field_indices_set (a_enclosing_object.Hidden_fields)
 			create field_array.make (new_field_list.to_array)
-			field_table := field_array.to_table (a_enclosing_object)
+			check type_conformance: attached {EL_REFLECTIVE} a_enclosing_object as al_enclosing_object then
+				field_table := field_array.to_table (al_enclosing_object)
+			end
 		end
 
 feature -- Access
