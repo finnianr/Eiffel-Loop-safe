@@ -63,7 +63,9 @@ feature {EL_REFLECTIVE} -- Element change
 	set_conditional_value (key: STRING; new: like item)
 		do
 			if condition /= default_condition implies condition (new) then
-				extend (new, key)
+				check has_new: attached new as al_new then
+					extend (al_new, key)
+				end
 			end
 		end
 
