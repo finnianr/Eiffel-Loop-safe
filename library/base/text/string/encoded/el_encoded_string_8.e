@@ -27,7 +27,7 @@ inherit
 			{ANY} has, adapt, substring, is_substring_whitespace,
 				substring_index, to_string_32,
 				has_substring
-			{ANY} is_equal, plus
+			{ANY} is_equal, plus, is_less, is_less_equal, is_greater_equal, is_greater
 			{ANY} append_character, is_empty, wipe_out, share, set_encoded, count, area,
 			capacity, same_string, to_c, to_string_8,
 			Is_string_8
