@@ -152,7 +152,9 @@ feature {NONE} -- Factory
 				end
 			end
 			if not found then
-				create {EL_REFLECTED_REFERENCE [ANY]} Result.make (enclosing_object, index, name)
+				check conforms: attached {EL_REFLECTIVE} enclosing_object as al_enclosing_object then
+					create {EL_REFLECTED_REFERENCE [ANY]} Result.make (al_enclosing_object, index, name)
+				end
 			end
 		end
 
