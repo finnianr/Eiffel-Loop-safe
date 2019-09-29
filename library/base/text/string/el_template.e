@@ -52,7 +52,9 @@ feature {NONE} -- Initialization
 						start_index := 1; end_index := length
 					end
 					variable_values.put (create {S}.make_empty, item.substring (start_index, end_index).to_string_8)
-					part_list.extend (variable_values.found_item)
+					check found_item: attached variable_values.found_item as al_found_item then
+						part_list.extend (al_found_item)
+					end
 					if length < item.count then
 						part_list.extend (item.substring (length + 1, item.count))
 					end
