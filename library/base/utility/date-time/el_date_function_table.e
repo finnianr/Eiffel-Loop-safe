@@ -16,5 +16,6 @@ inherit
 	EL_HASH_TABLE [FUNCTION [DATE, ZSTRING], STRING]
 
 create
-	make
+	make, make_size
+	
 end
