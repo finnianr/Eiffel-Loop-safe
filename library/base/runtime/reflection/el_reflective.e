@@ -156,7 +156,9 @@ feature {NONE} -- Implementation
 			l_meta_data := meta_data
 			table := l_meta_data.field_table
 			table.query_by_type (value_table.value_type)
-			query_results := table.last_query
+			check conforms: attached {LIST [EL_REFLECTED_FIELD]} table.last_query as al_last_query then
+				query_results := al_last_query
+			end
 			from query_results.start until query_results.after loop
 				value_table.set_value (query_results.item.export_name, query_results.item.value (Current))
 				query_results.forth
