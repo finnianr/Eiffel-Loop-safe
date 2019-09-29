@@ -147,7 +147,9 @@ feature {NONE} -- Factory
 			type_id := field_static_type (index)
 			across Reference_type_tables as table until found loop
 				if table.item.has_type (type_id) then
-					Result := new_reflected_field_for_type (table.item.found_item, index, name)
+					check found_item: attached table.item.found_item as al_found_item then
+						Result := new_reflected_field_for_type (al_found_item, index, name)
+					end
 					found := True
 				end
 			end
