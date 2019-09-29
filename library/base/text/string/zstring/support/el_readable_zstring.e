@@ -2112,7 +2112,7 @@ feature {NONE} -- Implementation
 
 	adapted_general (a_general: READABLE_STRING_GENERAL; argument_number: INTEGER): like Current
 		do
-			if attached {EL_READABLE_ZSTRING} a_general as zstring then
+			if attached {like Current} a_general as zstring then
 				Result := zstring
 			elseif argument_number = 1 then
 				Result := Empty_once_string
