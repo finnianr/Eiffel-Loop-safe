@@ -19,7 +19,7 @@ inherit
 		end
 
 create
-	make_equal, make
+	make_equal, make, make_size
 
 feature -- Access
 
