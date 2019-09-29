@@ -19,7 +19,7 @@ inherit
 		end
 
 create
-	make, make_open_write, make_open_write_to_text, make_open_read_from_text
+	make, make_open_write, make_open_write_to_text, make_open_read_from_text, make_with_name
 
 feature -- Access
 
