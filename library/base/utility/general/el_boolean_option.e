@@ -39,6 +39,7 @@ inherit
 		export
 			{NONE} all
 			{ANY} is_enabled, set_state
+			{ANY} conjuncted, conjuncted_semistrict, negated, disjuncted, disjuncted_semistrict
 		end
 
 	EL_MAKEABLE_FROM_STRING_8
