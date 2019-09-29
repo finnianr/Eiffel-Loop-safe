@@ -79,8 +79,8 @@ feature -- Basic operations
 				setter.set_operand (index)
 
 			elseif attached {CHAIN [ANY]} operand as list then
-				if list.generating_type.generic_parameter_count = 1 then
-					Setter_types.search (list.generating_type.generic_parameter_type (1))
+				if list.generating_type.generic_parameter_count = 1 and then attached {TYPE [ANY]} list as al_list then
+					Setter_types.search (al_list.generating_type.generic_parameter_type (1))
 				elseif attached {EL_ZSTRING_LIST} operand then
 					Setter_types.search ({ZSTRING})
 				elseif attached {EL_FILE_PATH_LIST} operand then
@@ -88,9 +88,9 @@ feature -- Basic operations
 				else
 					Setter_types.search ({like Current}) -- `Setter_types.found' is now False
 				end
-				if Setter_types.found then
+				if Setter_types.found and then attached Setter_types.found_item as al_found_item then
 					setter := Factory.instance_from_type (
-						Setter_types.found_item, agent {EL_MAKE_OPERAND_SETTER [ANY]}.make_list (make_routine, Current)
+						al_found_item, agent {EL_MAKE_OPERAND_SETTER [ANY]}.make_list (make_routine, Current)
 					)
 					setter.set_operand (index)
 				end
