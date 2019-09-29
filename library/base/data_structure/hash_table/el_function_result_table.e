@@ -26,7 +26,7 @@ inherit
 	EL_MODULE_EIFFEL
 
 create
-	make
+	make, make_count
 
 feature {NONE} -- Initialization
 
