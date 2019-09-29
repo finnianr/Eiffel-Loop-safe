@@ -34,7 +34,7 @@ inherit
 		end
 
 create
-	make
+	make, make_with_count
 
 convert
 	make ({ARRAY [EL_EVENT_LISTENER]})
