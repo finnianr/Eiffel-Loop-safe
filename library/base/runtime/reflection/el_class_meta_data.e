@@ -42,12 +42,10 @@ feature {NONE} -- Initialization
 			Precursor (a_enclosing_object)
 			check conforms: attached {EL_REFLECTIVE} a_enclosing_object as al_enclosing_object then
 				New_instance_table.extend_from_array (al_enclosing_object.new_instance_functions)
-			end
-			create cached_field_indices_set.make_equal (3)
-			excluded_fields := new_field_indices_set (a_enclosing_object.Except_fields)
-			hidden_fields := new_field_indices_set (a_enclosing_object.Hidden_fields)
-			create field_array.make (new_field_list.to_array)
-			check type_conformance: attached {EL_REFLECTIVE} a_enclosing_object as al_enclosing_object then
+				create cached_field_indices_set.make_equal (3)
+				excluded_fields := new_field_indices_set (al_enclosing_object.Except_fields)
+				hidden_fields := new_field_indices_set (al_enclosing_object.Hidden_fields)
+				create field_array.make (new_field_list.to_array)
 				field_table := field_array.to_table (al_enclosing_object)
 			end
 		end
@@ -132,7 +130,10 @@ feature {NONE} -- Factory
 			excluded := excluded_fields
 			create Result.make (field_count - excluded.count)
 			from i := 1 until i > field_count loop
-				if not excluded.has (i) and then enclosing_object.field_included (field_type (i), field_static_type (i)) then
+				if not excluded.has (i)
+					and then attached {EL_REFLECTIVE} enclosing_object as al_enclosing_object
+					and then al_enclosing_object.field_included (field_type (i), field_static_type (i))
+				then
 					name := field_name (i)
 					-- if not a once ("OBJECT") field
 					if name [1] /= '_' then
