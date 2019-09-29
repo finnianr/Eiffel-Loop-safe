@@ -45,7 +45,9 @@ feature -- Access
 		local
 			type_id: INTEGER
 		do
-			type_id := Eiffel.dynamic_type (target)
+			check separate_target: attached {separate ANY} target as al_target then
+				type_id := Eiffel.dynamic_type (al_target)
+			end
 			if has_key (type_id) then
 				Result := found_item
 			else
