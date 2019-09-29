@@ -26,7 +26,7 @@ inherit
 		export
 			{NONE} all
 			{ANY} is_closed, file_readable, extendible, twin, is_open_read, wipe_out, prunable, last_string, delete,
-					path, date, file_pointer
+					path, date, file_pointer, path_exists
 		undefine
 			put_raw_character_8,
 			put_integer, putint, put_integer_8, put_integer_16, put_integer_32, put_integer_64,
