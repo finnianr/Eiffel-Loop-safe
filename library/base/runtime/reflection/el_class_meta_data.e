@@ -176,7 +176,9 @@ feature {NONE} -- Factory
 		do
 			if attached {EL_REFLECTED_FIELD} Eiffel.new_instance_of (type.type_id) as new_field then
 				Result := new_field
-				Result.make (enclosing_object, index, name)
+				check has_object: attached {EL_REFLECTIVE} enclosing_object as al_enclosing_object then
+					Result.make (al_enclosing_object, index, name)
+				end
 			end
 		end
 
