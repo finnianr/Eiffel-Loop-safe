@@ -13,10 +13,38 @@ class
 	EL_REFERENCE_FIELD_VALUE_TABLE [G]
 
 inherit
+	HASH_TABLE [G, STRING]
+		rename
+			make as make_with_count,
+			make_equal as make
+		redefine
+			make
+		end
+
 	EL_FIELD_VALUE_TABLE [G]
 
 create
-	make
+	make,
+	make_with_count
+
+feature {NONE} -- Initialization
+
+	make (n: INTEGER)
+		do
+			Precursor (n)
+			value_type := {G}
+			default_condition := agent (v: G): BOOLEAN do end
+			condition := default_condition
+		end
+
+feature {EL_REFLECTIVE} -- Element change
+
+	set_conditional_value (key: STRING; new: like item)
+		do
+			if attached new as al_new and then (condition /= default_condition implies condition (al_new)) then
+				extend (al_new, key)
+			end
+		end
 
 feature {EL_REFLECTIVELY_SETTABLE} -- Access
 

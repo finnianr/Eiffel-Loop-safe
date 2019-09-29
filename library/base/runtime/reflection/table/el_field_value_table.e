@@ -18,29 +18,12 @@ deferred class
 	EL_FIELD_VALUE_TABLE [G]
 
 inherit
-	HASH_TABLE [G, STRING]
-		rename
-			make as make_with_count,
-			make_equal as make
-		redefine
-			make
-		end
-
 	REFLECTOR_CONSTANTS
 		export
 			{NONE} all
+			{ANY} deep_twin, is_deep_equal, standard_is_equal
 		undefine
 			is_equal, copy
-		end
-
-feature {NONE} -- Initialization
-
-	make (n: INTEGER)
-		do
-			Precursor (n)
-			value_type := {G}
-			default_condition := agent (v: G): BOOLEAN do end
-			condition := default_condition
 		end
 
 feature {EL_REFLECTIVE} -- Access
@@ -59,13 +42,6 @@ feature -- Element change
 		end
 
 feature {EL_REFLECTIVE} -- Element change
-
-	set_conditional_value (key: STRING; new: like item)
-		do
-			if attached new as al_new and then (condition /= default_condition implies condition (al_new)) then
-				extend (al_new, key)
-			end
-		end
 
 	set_value (key: STRING; value: ANY)
 		deferred
