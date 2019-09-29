@@ -24,7 +24,9 @@ inherit
 			set as set_encoded
 		export
 			{NONE} all
-			{ANY} has, adapt
+			{ANY} has, adapt, substring, is_substring_whitespace,
+				substring_index, to_string_32,
+				has_substring
 			{ANY} is_equal, plus
 			{ANY} append_character, is_empty, wipe_out, share, set_encoded, count, area,
 			capacity, same_string, to_c, to_string_8,
