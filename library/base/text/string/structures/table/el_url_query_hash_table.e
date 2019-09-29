@@ -31,7 +31,7 @@ inherit
 	EL_ZSTRING_CONSTANTS
 
 create
-	make_equal, make, make_default
+	make_equal, make, make_default, make_size
 
 feature {NONE} -- Initialization
 

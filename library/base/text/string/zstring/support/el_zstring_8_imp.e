@@ -25,7 +25,7 @@ inherit
 		end
 
 create
-	make_empty, make_from_zstring
+	make_empty, make_from_zstring, make
 
 feature {NONE} -- Initialization
 

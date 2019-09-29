@@ -22,7 +22,7 @@ inherit
 		end
 
 create
-	make, make_from_pointer, make_from_other
+	make, make_from_pointer, make_from_other, make_from_array
 
 feature {NONE} -- Initialization
 

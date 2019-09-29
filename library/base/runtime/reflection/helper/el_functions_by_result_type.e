@@ -19,7 +19,8 @@ inherit
 		end
 
 create
-	make
+	make,
+	make_table
 
 feature {NONE} -- Initialization
 
