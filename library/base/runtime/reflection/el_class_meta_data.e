@@ -40,7 +40,9 @@ feature {NONE} -- Initialization
 	make (a_enclosing_object: like enclosing_object)
 		do
 			Precursor (a_enclosing_object)
-			New_instance_table.extend_from_array (a_enclosing_object.new_instance_functions)
+			check conforms: attached {EL_REFLECTIVE} a_enclosing_object as al_enclosing_object then
+				New_instance_table.extend_from_array (al_enclosing_object.new_instance_functions)
+			end
 			create cached_field_indices_set.make_equal (3)
 			excluded_fields := new_field_indices_set (a_enclosing_object.Except_fields)
 			hidden_fields := new_field_indices_set (a_enclosing_object.Hidden_fields)
