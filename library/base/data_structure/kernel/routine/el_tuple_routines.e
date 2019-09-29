@@ -34,7 +34,9 @@ feature -- Basic operations
 			list: LIST [STRING_GENERAL]; general: STRING_GENERAL
 			found, is_path_field: BOOLEAN; l_tuple_type: TYPE [TUPLE]; type_id: INTEGER
 		do
-			l_tuple_type := tuple.generating_type
+			check conforms: attached {TYPE [TUPLE]} tuple.generating_type as al_gen_type then
+				l_tuple_type := al_gen_type
+			end
 			list := csv_list.split (',')
 			from list.start until list.index > tuple.count or list.after loop
 				type_id := l_tuple_type.generic_parameter_type (list.index).type_id
