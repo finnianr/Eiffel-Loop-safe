@@ -86,7 +86,7 @@ feature -- String
 				write_string_8 (str_8)
 
 			elseif attached {READABLE_STRING_32} a_string as str_32 then
-				write_string_32 (str_32)
+				write_string_32 (str_32.string)
 			end
 		end
 
