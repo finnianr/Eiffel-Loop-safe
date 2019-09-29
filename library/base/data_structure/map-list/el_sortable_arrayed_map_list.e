@@ -13,8 +13,6 @@ deferred class
 	EL_SORTABLE_ARRAYED_MAP_LIST [K -> HASHABLE, G]
 
 inherit
---	EL_ARRAYED_MAP_LIST [K, G]
-
 	PART_COMPARATOR [TUPLE [K, G]]
 		undefine
 			is_equal, copy
