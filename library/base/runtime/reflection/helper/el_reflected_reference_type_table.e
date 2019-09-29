@@ -19,8 +19,10 @@ inherit
 			{ANY} deep_copy,
 				deep_twin,
 				is_deep_equal,
-				standard_is_equal
-			{ANY} has_key, found_item, count
+				standard_is_equal, object_comparison, search, found, item_position, compare_objects,
+				has_default
+			{ANY} has_key, found_item, count, put, iteration_position, indexes_map, capacity,
+				deleted_marks, content, keys, deleted_item_position
 		redefine
 			make
 		end

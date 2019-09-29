@@ -20,6 +20,10 @@ inherit
 			make as make_table
 		export
 			{NONE} all
+			{ANY} capacity, deleted_marks, iteration_position, keys, put,
+				indexes_map, content, deleted_item_position, item_position,
+				found, search, found_item, count, compare_objects, object_comparison,
+				has_default
 		end
 
 	EL_SHARED_ZCODEC

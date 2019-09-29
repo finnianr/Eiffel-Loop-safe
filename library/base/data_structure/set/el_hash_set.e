@@ -26,7 +26,9 @@ inherit
 			put as ht_put
 		export
 			{NONE} all
-			{ANY} has, has_key, found, found_item, search, count,
+			{ANY} iteration_position, keys, ht_put, content, deleted_marks, capacity,
+				deleted_item_position, has_default, item_position
+			{ANY} has, has_key, found, found_item, search, count, indexes_map,
 				 inserted, to_array, wipe_out, conflict, key_for_iteration, item_for_iteration
 		undefine
 			changeable_comparison_criterion

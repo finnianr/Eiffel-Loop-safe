@@ -18,7 +18,8 @@ inherit
 			put as put_item,
 			found_item as found_count
 		export
-			{NONE} force, extend, put_item
+			{NONE} force, extend
+			{ANY} put_item
 		end
 
 create

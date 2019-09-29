@@ -19,7 +19,8 @@ inherit
 			{ANY} deep_copy,
 				deep_twin,
 				is_deep_equal,
-				standard_is_equal, area_v2, i_th, object_comparison, before, is_empty
+				standard_is_equal, area_v2, i_th, object_comparison, before, is_empty,
+				index
 			{ANY} count, Extendible
 		redefine
 			make, extend

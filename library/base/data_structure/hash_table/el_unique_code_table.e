@@ -22,7 +22,9 @@ inherit
 			{ANY} deep_copy,
 				deep_twin,
 				is_deep_equal,
-				standard_is_equal
+				standard_is_equal, put_code, content, deleted_marks, capacity, keys,
+				iteration_position, indexes_map, deleted_item_position, item_position,
+				count, compare_objects, object_comparison, has_default
 			{ANY} last_code, search, found, item
 		end
 

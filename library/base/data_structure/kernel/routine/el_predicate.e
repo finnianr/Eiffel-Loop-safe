@@ -20,7 +20,7 @@ inherit
 				deep_twin,
 				is_deep_equal,
 				standard_is_equal,
-				adapt, open_count, routine_id
+				adapt, open_count, routine_id, last_result
 		end
 
 create
