@@ -31,7 +31,9 @@ feature -- Access
 				Result := found_item
 			else
 				Result := new_item.item ([])
-				extend (Result, type)
+				check has_result: attached Result as al_result then
+					extend (al_result, type)
+				end
 			end
 		end
 
