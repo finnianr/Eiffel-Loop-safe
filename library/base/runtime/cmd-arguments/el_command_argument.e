@@ -64,9 +64,9 @@ feature -- Basic operations
 			operand := make_routine.operands.item (index)
 			make_routine.extend_help (word_option, help_description, operand)
 			operand_type := operand.generating_type
-			if Setter_types.has_key (operand_type) then
+			if Setter_types.has_key (operand_type) and then attached Setter_types.found_item as al_found_item then
 				setter := Factory.instance_from_type (
-					Setter_types.found_item, agent {EL_MAKE_OPERAND_SETTER [ANY]}.make (make_routine, Current)
+					al_found_item, agent {EL_MAKE_OPERAND_SETTER [ANY]}.make (make_routine, Current)
 				)
 				setter.set_operand (index)
 
