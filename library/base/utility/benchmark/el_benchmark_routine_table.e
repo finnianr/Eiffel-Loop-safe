@@ -23,7 +23,7 @@ inherit
 	EL_MODULE_LIO
 
 create
-	make
+	make, make_size
 
 feature -- Access
 
