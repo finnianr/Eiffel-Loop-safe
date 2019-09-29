@@ -24,6 +24,8 @@ inherit
 			set as set_encoded
 		export
 			{NONE} all
+			{ANY} has, adapt
+			{ANY} is_equal, plus
 			{ANY} append_character, is_empty, wipe_out, share, set_encoded, count, area,
 			capacity, same_string, to_c, to_string_8,
 			Is_string_8

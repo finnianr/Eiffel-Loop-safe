@@ -19,6 +19,10 @@ inherit
 			found_item as last_code
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 			{ANY} last_code, search, found, item
 		end
 

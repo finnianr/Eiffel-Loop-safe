@@ -22,6 +22,10 @@ inherit
 		export
 			{NONE} all
 			{ANY} to_c
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 		end
 
 feature -- Initialization

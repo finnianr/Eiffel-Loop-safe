@@ -20,6 +20,7 @@ inherit
 			make as make_pointer
 		export
 			{NONE} all
+			{ANY} is_equal
 			{EL_WIN_FILE_INFO} item
 		end
 

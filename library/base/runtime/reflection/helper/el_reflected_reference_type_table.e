@@ -16,6 +16,10 @@ inherit
 	EL_HASH_TABLE [TYPE [REFLECTED_TYPE], INTEGER]
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 			{ANY} has_key, found_item, count
 		redefine
 			make

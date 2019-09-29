@@ -16,6 +16,11 @@ inherit
 	FUNCTION [ANY]
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal,
+				adapt, written_type_id_inline_agent, is_target_closed, calc_rout_addr
 			{EL_FUNCTION_ID} encaps_rout_disp
 		redefine
 			is_equal

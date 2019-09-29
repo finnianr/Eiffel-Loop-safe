@@ -16,6 +16,10 @@ inherit
 	ARRAYED_STACK [S]
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 		end
 
 create

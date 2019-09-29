@@ -18,6 +18,7 @@ inherit
 			count as byte_count
 		export
 			{NONE} all
+			{ANY} is_equal
 		redefine
 			default_create
 		end

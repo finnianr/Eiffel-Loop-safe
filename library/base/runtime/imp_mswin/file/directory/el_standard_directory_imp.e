@@ -44,7 +44,10 @@ feature -- Access
 
 	Home: EL_DIR_PATH
 		once
-			Result := environ ("HOMEDRIVE") + environ ("HOMEPATH")
+			check has_home_drive_and_path: attached environ ("HOMEDRIVE") as al_homedrive and then
+				attached environ ("HOMEPATH") as al_homepath then
+				Result := al_homedrive + al_homepath
+			end
 		end
 
 	User_local: EL_DIR_PATH

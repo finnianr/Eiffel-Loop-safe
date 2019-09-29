@@ -16,6 +16,11 @@ inherit
 	PREDICATE
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal,
+				adapt, open_count, routine_id
 		end
 
 create

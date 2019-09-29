@@ -19,6 +19,10 @@ inherit
 			set_item as set_value
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal
 		redefine
 			actual_value, set_value
 		end

@@ -20,6 +20,12 @@ inherit
 	PROCEDURE [OPEN_ARGS]
 		export
 			{NONE} all
+			{ANY} deep_copy,
+				deep_twin,
+				is_deep_equal,
+				standard_is_equal,
+				adapt, is_basic, is_target_closed, operands, rout_disp, encaps_rout_disp,
+				written_type_id_inline_agent, calc_rout_addr
 			{ANY} closed_operands, closed_count
 		end
 
