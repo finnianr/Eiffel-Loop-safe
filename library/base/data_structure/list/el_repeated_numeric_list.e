@@ -18,11 +18,8 @@ inherit
 	LIST [G]
 		export
 			{NONE} all
-			{ANY} item, readable, off, before, after, go_i_th, valid_cursor_index
-			{ANY} deep_copy,
-				deep_twin,
-				is_deep_equal,
-				standard_is_equal, is_empty, go_to, cursor, object_comparison, is_equal
+			{ANY} item, readable, off, before, after, go_i_th, valid_cursor_index, deep_copy,
+				deep_twin, is_deep_equal, standard_is_equal, is_empty, object_comparison, is_equal
 		redefine
 			start, finish, go_i_th, move
 		end
@@ -219,13 +216,6 @@ feature -- Element change
 
 feature {NONE} -- Unused
 
-	valid_cursor (p: CURSOR): BOOLEAN
-			--
-		do
-		end
-
-	cursor: CURSOR
-
 	replace (v: like item)
 			-- Replace current item by `v'.
 		do
@@ -235,6 +225,15 @@ feature {NONE} -- Unused
 			--
 		do
 		end
+
+feature -- 19.05
+
+	valid_cursor (p: CURSOR): BOOLEAN
+			--
+		do
+		end
+
+	cursor: CURSOR
 
 	go_to (p: CURSOR)
 			--

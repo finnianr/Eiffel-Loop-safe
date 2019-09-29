@@ -20,7 +20,7 @@ inherit
 				deep_twin,
 				is_deep_equal,
 				standard_is_equal, area_v2, count, i_th, object_comparison,
-				is_empty, after, index
+				is_empty, after, index, valid_index
 		end
 
 create

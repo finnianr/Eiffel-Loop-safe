@@ -31,8 +31,8 @@ feature {NONE} -- Initialization
 			has_read_function_for_type: Read_functions_table.has ({G})
 		do
 			Precursor (a_object, a_index, a_name)
-			if attached {like new_item} Read_functions_table [{G}] as l_new_item then
-				new_item := l_new_item
+			if attached {like new_item} Read_functions_table.iteration_item (a_index) as al_new_item then
+				new_item := al_new_item
 			end
 		end
 

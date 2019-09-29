@@ -22,7 +22,7 @@ inherit
 				standard_is_equal,
 				adapt, open_count, routine_id, last_result, is_target_closed, encaps_rout_disp,
 				is_basic, calc_rout_addr, closed_operands, operands, rout_disp, callable,
-				written_type_id_inline_agent
+				written_type_id_inline_agent, conforms_to
 		end
 
 create

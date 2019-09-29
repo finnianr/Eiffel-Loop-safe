@@ -24,8 +24,8 @@ inherit
 				is_deep_equal,
 				standard_is_equal, put_code, content, deleted_marks, capacity, keys,
 				iteration_position, indexes_map, deleted_item_position, item_position,
-				count, compare_objects, object_comparison, has_default
-			{ANY} last_code, search, found, item
+				count, compare_objects, object_comparison, has_default, has
+			{ANY} last_code, search, found, item, changeable_comparison_criterion
 		end
 
 create

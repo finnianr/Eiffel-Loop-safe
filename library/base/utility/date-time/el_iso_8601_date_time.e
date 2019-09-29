@@ -68,13 +68,15 @@ feature {NONE} -- Implementation
 			string [T_index] := 'T'
 		end
 
-feature {EL_DATE_TEXT} -- Constant
+feature {ANY} -- 19.05
 
 	Default_format_string: STRING
 			-- Default output format string
 		once
 			Result := "yyyy-[0]mm-[0]dd [0]hh:[0]mi:[0]ss"
 		end
+
+feature {EL_DATE_TEXT} -- Constant
 
 	Input_string_count: INTEGER
 		once

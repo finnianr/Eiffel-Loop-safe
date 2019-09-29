@@ -30,7 +30,9 @@ feature -- Access
 		do
 			if not is_enabled or else last_item.is_empty then
 				fn_new_item.apply
-				last_item := fn_new_item.last_result
+				check has_result: attached fn_new_item.last_result as al_result then
+					last_item := al_result
+				end
 			end
 			Result := last_item
 		end

@@ -20,9 +20,9 @@ inherit
 				deep_twin,
 				is_deep_equal,
 				standard_is_equal, object_comparison, search, found, item_position, compare_objects,
-				has_default
+				has_default, has
 			{ANY} has_key, found_item, count, put, iteration_position, indexes_map, capacity,
-				deleted_marks, content, keys, deleted_item_position
+				deleted_marks, content, keys, deleted_item_position, changeable_comparison_criterion
 		redefine
 			make
 		end

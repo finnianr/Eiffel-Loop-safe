@@ -20,7 +20,7 @@ inherit
 				deep_twin,
 				is_deep_equal,
 				standard_is_equal, area_v2, i_th, object_comparison, before, is_empty,
-				index
+				index, valid_index
 			{ANY} count, Extendible
 		redefine
 			make, extend

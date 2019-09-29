@@ -19,7 +19,7 @@ inherit
 		export
 			{EL_REFLECTED_FIELD_TABLE} all
 			{ANY} extend, found, found_item, count, start, after, forth, item_for_iteration, key_for_iteration, has_key,
-				current_keys
+				current_keys, off, has
 		end
 
 	EL_REFLECTION_HANDLER

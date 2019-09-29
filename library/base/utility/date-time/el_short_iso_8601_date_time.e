@@ -38,13 +38,15 @@ feature {NONE} -- Implementation
 			string.insert_character ('T', T_index)
 		end
 
-feature {EL_DATE_TEXT} -- Constant
+feature {ANY} -- 19.05
 
 	Default_format_string: STRING
 			-- Default output format string
 		once
 			Result := "yyyy[0]mm[0]dd[0]hh[0]mi[0]ss"
 		end
+
+feature {EL_DATE_TEXT} -- Constant
 
 	T_index: INTEGER
 		once

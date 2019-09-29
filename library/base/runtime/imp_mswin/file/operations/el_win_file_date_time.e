@@ -20,8 +20,7 @@ inherit
 			make as make_pointer
 		export
 			{NONE} all
-			{ANY} is_equal, count
-			{EL_WIN_FILE_INFO} item
+			{ANY} is_equal, count, item
 		end
 
 	EL_WIN_FILE_INFO_C_API
