@@ -62,10 +62,8 @@ feature {EL_REFLECTIVE} -- Element change
 
 	set_conditional_value (key: STRING; new: like item)
 		do
-			if condition /= default_condition implies condition (new) then
-				check has_new: attached new as al_new then
-					extend (al_new, key)
-				end
+			if attached new as al_new and then (condition /= default_condition implies condition (al_new)) then
+				extend (al_new, key)
 			end
 		end
 
@@ -80,4 +78,5 @@ feature {NONE} -- Implementation
 feature {NONE} -- Internal attributes
 
 	condition: PREDICATE [G]
+
 end
