@@ -180,7 +180,7 @@ feature {NONE} -- Internal attributes
 
 	cached_field_indices_set: HASH_TABLE [EL_FIELD_INDICES_SET, STRING]
 
-	enclosing_object: EL_REFLECTIVE
+	enclosing_object: ANY --EL_REFLECTIVE
 
 feature {NONE} -- Constants
 
