@@ -35,7 +35,7 @@ inherit
 		end
 
 create
-	make
+	make, make_size
 
 feature {NONE} -- Initialization
 
