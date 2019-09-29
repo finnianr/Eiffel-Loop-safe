@@ -267,8 +267,8 @@ feature {EL_REFLECTION_HANDLER} -- Implementation
 				end
 				Name_part_pool.recycle (name_part)
 
-			elseif table.has_name (name, object) then
-				set_reflected_field (table.found_item, object, value)
+			elseif table.has_name (name, object) and then attached table.found_item as al_found_item then
+				set_reflected_field (al_found_item, object, value)
 			end
 		end
 
