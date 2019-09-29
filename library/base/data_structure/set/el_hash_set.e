@@ -130,7 +130,7 @@ feature {NONE} -- Implementation
 			-- on the dynamic type of `v' and `other'
 		do
 			create Result
-			check attached Result as al_result then
+			check attached {SUBSET_STRATEGY_HASHABLE [G]} Result as al_result then
 				Result := al_result
 			end
 		end
