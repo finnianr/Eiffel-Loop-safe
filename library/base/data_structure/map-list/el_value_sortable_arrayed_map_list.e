@@ -13,10 +13,27 @@ class
 	EL_VALUE_SORTABLE_ARRAYED_MAP_LIST [K -> HASHABLE, G -> COMPARABLE]
 
 inherit
+	EL_ARRAYED_MAP_LIST [K, G]
+
 	EL_SORTABLE_ARRAYED_MAP_LIST [K, G]
 
 create
 	make, make_filled, make_from_array, make_empty, make_from_table, make_sorted
+
+feature -- 19.05
+
+	sort (in_ascending_order: BOOLEAN)
+			--<Precursor>
+		local
+			quick: QUICK_SORTER [like item]
+		do
+			create quick.make (Current)
+			if in_ascending_order then
+				quick.sort (Current)
+			else
+				quick.reverse_sort (Current)
+			end
+		end
 
 feature {NONE} -- Implementation
 

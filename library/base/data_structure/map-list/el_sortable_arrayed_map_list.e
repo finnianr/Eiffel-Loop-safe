@@ -13,7 +13,7 @@ deferred class
 	EL_SORTABLE_ARRAYED_MAP_LIST [K -> HASHABLE, G]
 
 inherit
-	EL_ARRAYED_MAP_LIST [K, G]
+--	EL_ARRAYED_MAP_LIST [K, G]
 
 	PART_COMPARATOR [TUPLE [K, G]]
 		undefine
@@ -23,15 +23,8 @@ inherit
 feature -- Basic operations
 
 	sort (in_ascending_order: BOOLEAN)
-		local
-			quick: QUICK_SORTER [like item]
-		do
-			create quick.make (Current)
-			if in_ascending_order then
-				quick.sort (Current)
-			else
-				quick.reverse_sort (Current)
-			end
+			-- `sort' Current `in_ascending_order'
+		deferred
 		end
 
 end
