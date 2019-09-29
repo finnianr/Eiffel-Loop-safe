@@ -34,7 +34,7 @@ inherit
 		end
 
 create
-	make, make_filled, make_from_array
+	make, make_filled, make_from_array, make_from_sub_list
 
 feature -- Initialization
 
