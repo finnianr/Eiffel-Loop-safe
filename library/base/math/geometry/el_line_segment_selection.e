@@ -30,7 +30,7 @@ inherit
 		end
 
 create
-	make
+	make, make_from_segment
 
 feature {NONE} -- Initialization
 
