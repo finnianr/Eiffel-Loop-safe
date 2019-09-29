@@ -88,8 +88,8 @@ feature -- Access
 			table: like name_by_value
 		do
 			table := name_by_value
-			if table.has_key (a_value) then
-				Result := export_name (table.found_item, True)
+			if table.has_key (a_value) and then attached table.found_item as al_item then
+				Result := export_name (al_item, True)
 			else
 				create Result.make_empty
 			end
