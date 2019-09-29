@@ -26,11 +26,11 @@ inherit
 			{NONE} all
 			{ANY} has, adapt, substring, is_substring_whitespace,
 				substring_index, to_string_32,
-				has_substring
+				has_substring, string, same_string_general, to_upper, as_upper
 			{ANY} is_equal, plus, is_less, is_less_equal, is_greater_equal, is_greater
 			{ANY} append_character, is_empty, wipe_out, share, set_encoded, count, area,
 			capacity, same_string, to_c, to_string_8,
-			Is_string_8
+			Is_string_8, area_lower, set_count, internal_hash_code
 		end
 
 	EL_MODULE_UTF

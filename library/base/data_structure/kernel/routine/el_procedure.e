@@ -25,7 +25,7 @@ inherit
 				is_deep_equal,
 				standard_is_equal,
 				adapt, is_basic, is_target_closed, operands, rout_disp, encaps_rout_disp,
-				written_type_id_inline_agent, calc_rout_addr
+				written_type_id_inline_agent, calc_rout_addr, open_count, open_map
 			{ANY} closed_operands, closed_count
 		end
 

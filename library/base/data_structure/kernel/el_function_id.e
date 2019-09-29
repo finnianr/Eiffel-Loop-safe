@@ -21,7 +21,7 @@ inherit
 				is_deep_equal,
 				standard_is_equal,
 				adapt, written_type_id_inline_agent, is_target_closed, calc_rout_addr,
-				last_result
+				last_result, rout_disp, routine_id, operands
 			{EL_FUNCTION_ID} encaps_rout_disp
 		redefine
 			is_equal
