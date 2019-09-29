@@ -20,7 +20,7 @@ inherit
 		end
 
 create
-	make, make_from_static, make_from_tuple
+	make, make_from_static, make_from_tuple, make_list
 
 feature {NONE} -- Initialization
 
