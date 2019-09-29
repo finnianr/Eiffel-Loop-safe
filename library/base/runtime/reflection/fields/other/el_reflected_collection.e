@@ -115,7 +115,9 @@ feature {NONE} -- Constants
 
 			Result [{BOOLEAN}] := agent {EL_READABLE}.read_boolean
 			across l_read_functions as function loop
-				Result.extend (function.item, function.item.generating_type.generic_parameter_type (2))
+				check has_2: attached {TYPE [ANY]} function.item.generating_type.generic_parameter_type (2) as al_parm_type then
+					Result.extend (function.item, al_parm_type)
+				end
 			end
 		end
 end
