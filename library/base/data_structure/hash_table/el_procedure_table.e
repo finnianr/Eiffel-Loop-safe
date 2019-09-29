@@ -16,5 +16,6 @@ inherit
 	EL_STRING_HASH_TABLE [PROCEDURE, K]
 
 create
-	make_equal, make, default_create
+	make_equal, make, default_create, make_size
+	
 end
