@@ -22,7 +22,7 @@ inherit
 		end
 
 create
-	make, make_default
+	make, make_default, make_intervals
 
 feature {NONE} -- Initialization
 

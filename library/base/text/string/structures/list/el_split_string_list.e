@@ -41,7 +41,7 @@ inherit
 		end
 
 create
-	make, make_empty, make_from_sub_list
+	make, make_empty, make_from_sub_list, make_intervals
 
 feature {NONE} -- Initialization
 
