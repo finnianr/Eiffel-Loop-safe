@@ -60,7 +60,9 @@ feature {NONE} -- Implementation
 			Result := True
 			parameter_count := type.generic_parameter_count
 			from i := 1 until not Result or else i > parameter_count loop
-				member_type := type.generic_parameter_type (i)
+				check member_type_conformance: attached {TYPE [ANY]} type.generic_parameter_type (i) as al_member_type then
+					member_type := al_member_type
+				end
 				if not member_type.is_expanded then
 					Result := String_type_table.type_array.has (member_type.type_id)
 				end
