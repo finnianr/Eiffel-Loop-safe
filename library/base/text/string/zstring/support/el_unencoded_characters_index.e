@@ -28,7 +28,7 @@ inherit
 		end
 
 create
-	make, make_default
+	make, make_default, make_array
 
 feature {NONE} -- Initialization
 

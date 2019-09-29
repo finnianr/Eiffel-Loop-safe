@@ -91,7 +91,7 @@ feature -- Access
 			end
 		end
 
-	sub_list (start_index, end_index: INTEGER): like Current
+	sub_list (start_index, end_index: INTEGER): EL_ARRAYED_LIST [G]
 		do
 			create Result.make_from_sub_list (Current, start_index, end_index)
 		end
