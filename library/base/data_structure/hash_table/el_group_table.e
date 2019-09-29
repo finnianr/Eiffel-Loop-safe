@@ -21,7 +21,7 @@ inherit
 		end
 
 create
-	make
+	make, make_with_count
 
 feature {NONE} -- Initialization
 
