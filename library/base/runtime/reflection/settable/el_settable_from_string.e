@@ -276,8 +276,8 @@ feature {EL_REFLECTION_HANDLER} -- Implementation
 		do
 			if name.has ('.') then
 				set_inner_table_field (table, name, current_reflective, value)
-			elseif table.has_name (name, current_reflective) then
-				set_reflected_field (table.found_item, current_reflective, value)
+			elseif table.has_name (name, current_reflective) and then attached table.found_item as al_found_item then
+				set_reflected_field (al_found_item, current_reflective, value)
 			end
 		end
 
