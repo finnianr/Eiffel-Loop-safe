@@ -72,8 +72,8 @@ feature -- Access
 			table: like field_table
 		do
 			table := field_table
-			if table.has_name (name, current_reflective) then
-				Result := field_string (table.found_item)
+			if table.has_name (name, current_reflective) and then attached table.found_item as al_found_item then
+				Result := field_string (al_found_item)
 			else
 				Result := new_string
 			end
