@@ -125,7 +125,7 @@ feature -- Status query
 
 feature {NONE} -- Implementation
 
-	subset_strategy_selection (v: G; other: EL_HASH_SET [G]): SUBSET_STRATEGY_HASHABLE [G]
+	subset_strategy_selection (v: detachable G; other: EL_HASH_SET [G]): SUBSET_STRATEGY_HASHABLE [G]
 			-- Strategy to calculate several subset features selected depending
 			-- on the dynamic type of `v' and `other'
 		do
