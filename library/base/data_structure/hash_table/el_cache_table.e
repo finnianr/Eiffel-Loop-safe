@@ -21,7 +21,7 @@ inherit
 		end
 
 create
-	make_equal
+	make_equal, make
 
 feature {NONE} -- Initialization
 
