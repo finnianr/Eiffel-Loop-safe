@@ -36,7 +36,9 @@ feature -- Factory
 					operands_set := True
 				end
 				to_item.apply
-				Result.extend (to_item.last_result)
+				check has_result: attached to_item.last_result as al_last_result then
+					Result.extend (al_last_result)
+				end
 			end
 		end
 end
