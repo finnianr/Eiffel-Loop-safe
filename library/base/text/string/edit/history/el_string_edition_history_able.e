@@ -1,33 +1,18 @@
 note
-	description: "String edition_item history"
-
-	author: "Finnian Reilly"
-	copyright: "Copyright (c) 2001-2017 Finnian Reilly"
-	contact: "finnian at eiffel hyphen loop dot com"
-
-	license: "MIT license (See: en.wikipedia.org/wiki/MIT_License)"
-	date: "2019-02-04 19:12:11 GMT (Monday 4th February 2019)"
-	revision: "6"
+	description: "Summary description for {EL_STRING_EDITION_HISTORY_ABLE}."
+	author: ""
+	date: "$Date$"
+	revision: "$Revision$"
 
 deferred class
-	EL_STRING_EDITION_HISTORY [S -> STRING_GENERAL create make_empty end]
-
-inherit
-	ARRAYED_STACK [EL_STRING_EDITION]
-		rename
-			extend as list_extend,
-			make as make_array,
-			item as edition_item
-		redefine
-			wipe_out
-		end
+	EL_STRING_EDITION_HISTORY_ABLE [S -> STRING_GENERAL create make_empty end]
 
 feature -- Initialization
 
 	make (n: INTEGER)
 			--
 		do
-			make_array (n)
+--			make_array (n)
 			create redo_stack.make (n)
 			create string.make_empty
 			edition_procedures := new_edition_procedures
@@ -51,7 +36,7 @@ feature -- Element change
 		require
 			different_from_current: string /~ a_string
 		do
-			put (new_edition (string, a_string))
+			--put (new_edition (string, a_string))
 			string := a_string
 			redo_stack.wipe_out
 		end
@@ -59,15 +44,17 @@ feature -- Element change
 	undo
 		require
 			not is_empty
-		do
-			restore (Current, redo_stack)
+		deferred
 		end
 
 	redo
 		require
 			has_redo_items
-		do
-			restore (redo_stack, Current)
+		deferred
+		end
+
+	is_empty: BOOLEAN
+		deferred
 		end
 
 feature -- Status query
@@ -86,7 +73,6 @@ feature -- Removal
 
 	wipe_out
 		do
-			Precursor
 			create string.make_empty
 			caret_position := 0
 			redo_stack.wipe_out
@@ -152,28 +138,28 @@ feature {NONE} -- Factory
 			start_index := interval.lower; end_index := interval.upper
 			if former.count < latter.count then
 				if interval.count = latter.count then
-					create Result.make (Edition.set_string, [former])
+					create Result.make (Edition.set_string.as_integer_8, [former])
 
 				elseif interval.count = 1 then
-					create Result.make (Edition.remove_character, [start_index])
+					create Result.make (Edition.remove_character.as_integer_8, [start_index])
 				else
-					create Result.make (Edition.remove_substring, [start_index, end_index])
+					create Result.make (Edition.remove_substring.as_integer_8, [start_index, end_index])
 				end
 			elseif former.count > latter.count  then
 				if interval.count = former.count then
-					create Result.make (Edition.set_string, [former])
+					create Result.make (Edition.set_string.as_integer_8, [former])
 
 				elseif interval.count = 1 then
-					create Result.make (Edition.insert_character, [former [start_index], start_index])
+					create Result.make (Edition.insert_character.as_integer_8, [former [start_index], start_index])
 				else
-					create Result.make (Edition.insert_string, [former.substring (start_index, end_index), start_index])
+					create Result.make (Edition.insert_string.as_integer_8, [former.substring (start_index, end_index), start_index])
 				end
 			else
 				if interval.count = 1 then
-					create Result.make (Edition.replace_character, [former [start_index], start_index])
+					create Result.make (Edition.replace_character.as_integer_8, [former [start_index], start_index])
 				else
 					create Result.make (
-						Edition.replace_substring, [former.substring (start_index, end_index), start_index, end_index]
+						Edition.replace_substring.as_integer_8, [former.substring (start_index, end_index), start_index, end_index]
 					)
 				end
 			end

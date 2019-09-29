@@ -13,10 +13,57 @@ class
 	EL_STRING_8_EDITION_HISTORY
 
 inherit
-	EL_STRING_EDITION_HISTORY [STRING_8]
+	ARRAYED_STACK [EL_STRING_EDITION]
+		rename
+			extend as list_extend,
+			make as make_array,
+			item as edition_item
+		redefine
+			wipe_out,
+			new_filled_list
+		end
+
+	EL_STRING_EDITION_HISTORY_ABLE [STRING_8]
+		undefine
+			is_equal, copy
+		redefine
+			extend,
+			wipe_out
+		end
 
 create
 	make
+
+feature -- 19.05
+
+	wipe_out
+			--<Precursor>
+		do
+			Precursor {ARRAYED_STACK}
+			Precursor {EL_STRING_EDITION_HISTORY_ABLE}
+		end
+
+	extend (a_string: like string)
+		do
+			put (new_edition (string, a_string))
+			Precursor (a_string)
+		end
+
+	undo
+		do
+			restore (Current, redo_stack)
+		end
+
+	redo
+		do
+			restore (redo_stack, Current)
+		end
+
+	new_filled_list (n: INTEGER): like Current
+			--<Precursor>
+		do
+			Result := Precursor (n)
+		end
 
 feature {NONE} -- Edition operations
 

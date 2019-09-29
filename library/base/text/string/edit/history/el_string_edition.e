@@ -40,18 +40,18 @@ feature -- Basic operations
 
 feature -- Edition indices
 
-	insert_character: INTEGER_8 = 1
+	insert_character: INTEGER = 1
 
-	insert_string: INTEGER_8 = 2
+	insert_string: INTEGER = 2
 
-	remove_character: INTEGER_8 = 3
+	remove_character: INTEGER = 3
 
-	remove_substring: INTEGER_8 = 4
+	remove_substring: INTEGER = 4
 
-	replace_character: INTEGER_8 = 5
+	replace_character: INTEGER = 5
 
-	replace_substring: INTEGER_8 = 6
+	replace_substring: INTEGER = 6
 
-	set_string, upper: INTEGER_8 = 7
+	set_string, upper: INTEGER = 7
 
 end
