@@ -81,13 +81,15 @@ feature -- Access
 				create Result.make (count // 2)
 			end
 			from start until after loop
-				if inverse then
-					if not is_member (item_for_iteration) then
-						Result.put (item_for_iteration)
-					end
-				else
-					if is_member (item_for_iteration) then
-						Result.put (item_for_iteration)
+				check has_item: attached item_for_iteration as al_item then
+					if inverse then
+						if not is_member (al_item) then
+							Result.put (al_item)
+						end
+					else
+						if is_member (al_item) then
+							Result.put (al_item)
+						end
 					end
 				end
 				forth
@@ -128,6 +130,9 @@ feature {NONE} -- Implementation
 			-- on the dynamic type of `v' and `other'
 		do
 			create Result
+			check attached Result as al_result then
+				Result := al_result
+			end
 		end
 
 end
