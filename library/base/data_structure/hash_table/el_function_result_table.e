@@ -51,8 +51,10 @@ feature -- Access
 			if has_key (type_id) then
 				Result := found_item
 			else
-				Result := new_item (target)
-				extend (Result, type_id)
+				check has_result: attached new_item (target) as al_result then
+					Result := al_result
+					extend (Result, type_id)
+				end
 			end
 		end
 
