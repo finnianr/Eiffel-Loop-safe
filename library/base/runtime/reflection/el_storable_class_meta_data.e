@@ -39,7 +39,7 @@ feature -- Status query
 
 feature {NONE} -- Internal attributes
 
-	enclosing_object: EL_REFLECTIVELY_SETTABLE_STORABLE
+	enclosing_object: separate ANY
 
 feature {NONE} -- Constants
 
