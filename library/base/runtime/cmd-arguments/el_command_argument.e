@@ -80,7 +80,9 @@ feature -- Basic operations
 
 			elseif attached {CHAIN [ANY]} operand as list then
 				if list.generating_type.generic_parameter_count = 1 and then attached {TYPE [ANY]} list as al_list then
-					Setter_types.search (al_list.generating_type.generic_parameter_type (1))
+					if attached {TYPE [ANY]} al_list.generating_type.generic_parameter_type (1) as al_parm_type then
+						Setter_types.search (al_parm_type)
+					end
 				elseif attached {EL_ZSTRING_LIST} operand then
 					Setter_types.search ({ZSTRING})
 				elseif attached {EL_FILE_PATH_LIST} operand then
