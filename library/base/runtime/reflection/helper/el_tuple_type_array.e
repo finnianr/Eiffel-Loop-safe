@@ -36,7 +36,9 @@ feature {NONE} -- Initialization
 		do
 			make_filled ({INTEGER}, 1, type.generic_parameter_count)
 			from i := 1 until i > count loop
-				put (type.generic_parameter_type (i), i)
+				check has_param: attached {TYPE [ANY]} type.generic_parameter_type (i) as al_param then
+					put (al_param, i)
+				end
 				i := i + 1
 			end
 		end
