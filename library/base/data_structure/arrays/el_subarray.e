@@ -29,7 +29,7 @@ inherit
 			{ANY} deep_copy,
 				deep_twin,
 				is_deep_equal,
-				standard_is_equal
+				standard_is_equal, all_default, filled_with, object_comparison, same_items
 			{ARRAY} shared_area
 		redefine
 			item, subarray, make_from_array, make, subcopy_array
