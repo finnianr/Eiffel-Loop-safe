@@ -19,7 +19,7 @@ inherit
 		end
 
 create
-	make
+	make, make_list
 
 feature {NONE} -- Initialization
 
