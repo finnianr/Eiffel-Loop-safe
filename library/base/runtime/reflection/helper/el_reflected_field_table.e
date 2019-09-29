@@ -58,8 +58,8 @@ feature -- Access
 		do
 			create Result.make_equal (0)
 			across linear_representation as field loop
-				if not Result.has (field.item.type_id) then
-					Result.extend (Eiffel.type_of_type (field.item.type_id), field.item.type_id)
+				if not Result.has (field.item.type_id) and then attached {TYPE [ANY]} Eiffel.type_of_type (field.item.type_id) as al_type_of_field then
+					Result.extend (al_type_of_field, field.item.type_id)
 				end
 			end
 		end
