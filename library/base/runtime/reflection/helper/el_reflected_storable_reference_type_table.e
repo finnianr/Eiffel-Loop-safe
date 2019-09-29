@@ -44,8 +44,8 @@ feature -- Status query
 
 	has_conforming (type_id: INTEGER): BOOLEAN
 		do
-			if field_conforms_to (type_id, Tuple_type) then
-				Result := tuple_items_are_expanded_or_string_types (type_of_type (type_id))
+			if field_conforms_to (type_id, Tuple_type) and then attached {TYPE [ANY]} type_of_type (type_id) as al_item then
+				Result := tuple_items_are_expanded_or_string_types (al_item)
 			else
 				Result := conforming_type (type_id) > 0
 			end
