@@ -86,7 +86,9 @@ feature -- Basic operations
 		do
 			create list.make_from_array (Current)
 			shift := agent list.shift_i_th (?, ?)
-			tuple_list.do_all (agent shift.call)
+			if attached {PROCEDURE [TUPLE [TUPLE [INTEGER_32, INTEGER_32]]]} (agent shift.call) as al_agent then
+				tuple_list.do_all (al_agent)
+			end
 		end
 
 end
