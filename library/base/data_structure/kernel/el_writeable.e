@@ -80,7 +80,9 @@ feature -- String
 	write_string_general (a_string: READABLE_STRING_GENERAL)
 		do
 			if attached {EL_READABLE_ZSTRING} a_string as str_z then
-				write_string (str_z)
+				check type_conformance: attached {EL_ZSTRING} str_z as al_str_z then
+					write_string (al_str_z)
+				end
 
 			elseif attached {READABLE_STRING_8} a_string as str_8 then
 				write_string_8 (str_8)
