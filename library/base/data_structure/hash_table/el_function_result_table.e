@@ -62,7 +62,9 @@ feature -- Removal
 
 	remove (object: TARGET)
 		do
-			remove_type (Eiffel.dynamic_type (object))
+			check has_object: attached {TARGET} object as al_object then
+				remove_type (Eiffel.dynamic_type (al_object))
+			end
 		end
 
 feature {NONE} -- Initialization
