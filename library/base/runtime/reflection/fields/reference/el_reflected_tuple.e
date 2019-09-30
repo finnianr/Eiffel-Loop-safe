@@ -115,8 +115,12 @@ feature {NONE} -- Implementation
 					l_type := l_types [i]
 					if not l_type.is_expanded then
 						if New_instance_table.has_key (l_type.type_id) then
-							New_instance_table.found_item.apply
-							new_tuple.put_reference (New_instance_table.found_item.last_result, i)
+							check attached New_instance_table.found_item as al_found_item and then
+								attached al_found_item.last_result as al_last_result
+						then
+								al_found_item.apply
+								new_tuple.put_reference (al_last_result, i)
+							end
 						end
 						has_reference := True
 					end
@@ -126,6 +130,8 @@ feature {NONE} -- Implementation
 					new_tuple.compare_objects
 				end
 				Result := new_tuple
+			else
+				Result := []
 			end
 		end
 
