@@ -50,7 +50,7 @@ feature -- Element change
 		local
 			l_list: LINEAR [ZSTRING]
 		do
-			l_list := l_list.linear_representation
+			l_list := a_words.linear_representation
 			from l_list.start until l_list.after loop
 				put (l_list.item)
 				l_list.forth
