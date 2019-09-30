@@ -3,7 +3,7 @@ note
 		A unicode string percent-encoded according to specification RFC 3986.
 		See: https://en.wikipedia.org/wiki/Percent-encoding
 	]"
-
+	EIS: "name=percent_encoding", "src=https://en.wikipedia.org/wiki/Percent-encoding"
 	author: "Finnian Reilly"
 	copyright: "Copyright (c) 2001-2017 Finnian Reilly"
 	contact: "finnian at eiffel hyphen loop dot com"
@@ -43,7 +43,9 @@ inherit
 	EL_ENCODED_STRING_8
 
 create
-	make_encoded, make_empty, make
+	make_encoded,
+	make_empty,
+	make
 
 convert
 	make_encoded ({STRING})
@@ -195,4 +197,5 @@ feature {NONE} -- Constants
 	Escape_character: CHARACTER = '%%'
 
 	Sequence_count: INTEGER = 2
+	
 end
