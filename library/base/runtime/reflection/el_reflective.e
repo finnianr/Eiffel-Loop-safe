@@ -98,7 +98,9 @@ feature -- Element change
 		-- fields conforming to `BAG [ANY]' are wiped out (including strings)
 		-- fields conforming to `EL_MAKEABLE_FROM_STRING' are reinitialized
 		do
-			meta_data.field_array.do_all (agent {EL_REFLECTED_FIELD}.reset (Current))
+			check has_meta_data: attached meta_data as al_meta_data then
+				al_meta_data.field_array.do_all (agent {EL_REFLECTED_FIELD}.reset (Current))
+			end
 		end
 
 	set_from_other (other: EL_REFLECTIVE; other_except_list: STRING)
