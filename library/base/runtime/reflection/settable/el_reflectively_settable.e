@@ -31,8 +31,11 @@ feature {NONE} -- Initialization
 
 	make_default
 		do
-			if not attached field_table then
-				field_table := Meta_data_by_type.item (Current).field_table
+			if not attached field_table and then
+				attached Meta_data_by_type.item (Current) as al_item and then
+				attached al_item.field_table as al_field_table
+			then
+				field_table := al_field_table
 			end
 			if use_default_values then
 				initialize_fields
