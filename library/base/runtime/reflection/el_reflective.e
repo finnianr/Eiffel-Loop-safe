@@ -115,7 +115,9 @@ feature -- Element change
 			l_meta_data := meta_data
 			table := l_meta_data.field_table
 			except_indices := other.new_field_indices_set (other_except_list)
-			table_other := Meta_data_by_type.item (other).field_table
+			check attached Meta_data_by_type.item (other) as al_item then
+				table_other := al_item.field_table
+			end
 			from table_other.start until table_other.after loop
 				other_field := table_other.item_for_iteration
 				if not except_indices.has (other_field.index) then
