@@ -123,8 +123,9 @@ feature -- Factory
 			-- or else instance for `default_alias' if `type_alias' cannot be found
 		do
 			if types_indexed_by_name.has_key (General.to_zstring (a_alias)) then
-				if attached {G} Eiffel.new_instance_of (types_indexed_by_name.found_item.type_id) as instance then
-					Result := instance
+				if attached types_indexed_by_name.found_item as al_found_item and then
+					attached {G} Eiffel.new_instance_of (al_found_item.type_id) as instance then
+						Result := instance
 				end
 			elseif not default_alias.is_empty then
 				Result := raw_instance_from_alias (default_alias)
