@@ -123,7 +123,9 @@ feature {NONE} -- Implementation
 			new: FUNCTION [ANY]; is_assigned: BOOLEAN
 		do
 			if New_instance_table.has_key (type_id) then
-				new := New_instance_table.found_item
+				check has_new_found_item: attached New_instance_table.found_item as al_new_found_item then
+					new := al_new_found_item
+				end
 				new.apply
 				if attached {G} new.last_result as l_new then
 					Result := l_new
