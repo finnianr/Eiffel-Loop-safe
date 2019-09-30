@@ -35,8 +35,10 @@ feature -- Element change
 	extend_from_array (functions: ARRAY [like item])
 		do
 			across functions as f loop
-				check has_param: attached f.item.generating_type.generic_parameter_type (2) as al_param and then
-					attached f as al_f and then attached al_f.item as al_item
+				check has_param: attached f as al_f and then
+					attached al_f.item as al_item and then
+					attached al_item.generating_type as al_gen_type and then
+					attached al_gen_type.generic_parameter_type (2) as al_param
 				then
 					put (al_item, al_param.type_id)
 				end
