@@ -21,7 +21,7 @@ Clusters:
 		<setting name="dead_code_removal" value="feature"/>
 		<capability>
 			<concurrency use="thread"/>
-			<void_safety support="conformance" use="conformance"/>
+			<void_safety support="transitional" use="transitional"/>
 		</capability>
 		<mapping old_name="ZSTRING" new_name="EL_ZSTRING"/>
 		<external_object location="$EL_CONTRIB/C/MSC-runtime/spec/$ISE_PLATFORM/msvcr71.dll">
