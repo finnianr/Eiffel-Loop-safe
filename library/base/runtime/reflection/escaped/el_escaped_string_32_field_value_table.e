@@ -16,6 +16,13 @@ class
 	EL_ESCAPED_STRING_32_FIELD_VALUE_TABLE
 
 inherit
+	HASH_TABLE [STRING_32, STRING]
+		rename
+			make as make_with_count
+		redefine
+			empty_duplicate
+		end
+
 	EL_ESCAPED_STRING_GENERAL_FIELD_VALUE_TABLE [STRING_32]
 		redefine
 			escaper
@@ -23,6 +30,25 @@ inherit
 
 create
 	make
+
+feature {NONE} -- 19.05
+
+	empty_duplicate (n: INTEGER): like Current
+			-- Create an empty copy of Current that can accommodate `n' items
+		do
+			create Result.make (n, escaper)
+			if object_comparison then
+				Result.compare_objects
+			end
+		end
+
+feature {NONE} -- Initialization
+
+	make (n: INTEGER; a_escaper: like escaper)
+		do
+			make_table (n)
+			escaper := a_escaper
+		end
 
 feature {NONE} -- Implementation
 

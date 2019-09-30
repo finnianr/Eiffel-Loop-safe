@@ -22,20 +22,20 @@ deferred class
 	EL_ESCAPED_STRING_GENERAL_FIELD_VALUE_TABLE [S -> STRING_GENERAL create make end]
 
 inherit
-	EL_REFERENCE_FIELD_VALUE_TABLE [S]
+	EL_REFERENCE_FIELD_VALUE_TABLE_HELPER [S]
 		rename
 			make as make_table
 		redefine
 			set_conditional_value
 		end
 
-feature {NONE} -- Initialization
+--feature {NONE} -- Initialization
 
-	make (n: INTEGER; a_escaper: like escaper)
-		do
-			make_table (n)
-			escaper := a_escaper
-		end
+--	make (n: INTEGER; a_escaper: like escaper)
+--		do
+--			make_table (n)
+--			escaper := a_escaper
+--		end
 
 feature {NONE} -- Implementation
 
