@@ -112,8 +112,10 @@ feature -- Element change
 			field, other_field: EL_REFLECTED_FIELD
 			l_meta_data: like Meta_data_by_type.item
 		do
-			l_meta_data := meta_data
-			table := l_meta_data.field_table
+			check attached meta_data as al_meta_data then
+				l_meta_data := al_meta_data
+				table := l_meta_data.field_table
+			end
 			except_indices := other.new_field_indices_set (other_except_list)
 			check attached Meta_data_by_type.item (other) as al_item then
 				table_other := al_item.field_table
