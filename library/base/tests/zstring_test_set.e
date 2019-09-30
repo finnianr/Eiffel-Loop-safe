@@ -30,8 +30,17 @@ feature -- Test routines
 
 	zstring_test
 			-- New test routine
+		local
+			l_item: EL_ZSTRING
 		do
-			assert ("implemented", True)
+			create l_item.make_empty
+			assert_strings_equal ("empty_zstring", "", l_item.out)
+			l_item := "abc"
+			assert_strings_equal ("abc_zstring", "abc", l_item)
+			l_item.append_string_general ("xyz")
+			assert_strings_equal ("abcxyz_zstring", "abcxyz", l_item)
+			l_item.insert_string (create {EL_ZSTRING}.make_from_string ("123"), 4)
+			assert_strings_equal ("abc123xyz_zstring", "abc123xyz", l_item)
 		end
 
 end
