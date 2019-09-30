@@ -152,7 +152,9 @@ feature {NONE} -- Implementation
 						Result.append_string_general (path.name)
 					end
 				else
-					Result.append_string_general (tuple.item (i).out)
+					check has_item: attached tuple.item (i) as al_item then
+						Result.append_string_general (al_item.out)
+					end
 				end
 				i := i + 1
 			end
