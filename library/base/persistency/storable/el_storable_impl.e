@@ -14,9 +14,21 @@ class
 
 inherit
 	EL_REFLECTIVELY_SETTABLE_STORABLE
+		redefine
+			make_default
+		end
 
 create
 	make_default
+
+feature {NONE} -- Initialization
+
+	make_default
+			--<Precursor>
+		do
+			create field_table.make (5)
+			Precursor
+		end
 
 feature {NONE} -- Implementation
 
