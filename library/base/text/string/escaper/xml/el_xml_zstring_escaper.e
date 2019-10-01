@@ -42,4 +42,11 @@ feature {NONE} -- Implementation
 			Result := table.found or else (escape_128_plus and then codec.z_code_as_unicode (code) > 128)
 		end
 
+feature
+
+	readable: EL_ZSTRING
+		do
+			create Result
+		end
+
 end

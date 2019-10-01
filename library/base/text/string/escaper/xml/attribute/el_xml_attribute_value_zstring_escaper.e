@@ -25,4 +25,11 @@ inherit
 create
 	make, make_128_plus
 
+feature
+
+	readable: EL_ZSTRING
+		do
+			create Result
+		end
+
 end

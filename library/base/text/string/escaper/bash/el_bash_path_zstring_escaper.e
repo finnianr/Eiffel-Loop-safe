@@ -23,4 +23,11 @@ inherit
 create
 	make
 
+feature
+
+	readable: EL_ZSTRING
+		do
+			create Result
+		end
+
 end

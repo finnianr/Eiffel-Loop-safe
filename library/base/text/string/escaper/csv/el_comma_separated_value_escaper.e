@@ -68,4 +68,12 @@ feature {NONE} -- Constants
 		end
 
 	Double_quote: NATURAL = 34
+
+feature
+
+	readable: EL_ZSTRING
+		do
+			create Result.make_empty
+		end
+
 end

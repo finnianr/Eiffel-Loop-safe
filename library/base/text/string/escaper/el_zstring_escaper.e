@@ -29,8 +29,8 @@ feature {NONE} -- Implementation
 
 feature {NONE} -- Type definitions
 
-	READABLE: EL_READABLE_ZSTRING
-		do
+	readable: EL_READABLE_ZSTRING
+		deferred
 		end
 
 feature {NONE} -- Constants
