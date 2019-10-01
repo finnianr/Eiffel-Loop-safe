@@ -35,7 +35,7 @@ feature {NONE} -- Initialization
 			target_open: not a_new_item.is_target_closed
 		do
 			make_count (n)
-			new_item := a_new_item
+			internal_new_item := a_new_item
 		end
 
 feature -- Access
@@ -70,5 +70,10 @@ feature -- Removal
 feature {NONE} -- Initialization
 
 	new_item: FUNCTION [TARGET, R]
+		do
+			check attached internal_new_item as al_new_item then Result := al_new_item end
+		end
+
+	internal_new_item: detachable like new_item
 
 end
