@@ -57,6 +57,9 @@ feature -- Access
 		end
 
 	value: G
+		attribute
+			create Result.make_empty
+		end
 
 	as_assignment: G
 		do

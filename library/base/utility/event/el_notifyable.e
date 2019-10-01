@@ -36,6 +36,9 @@ feature -- Element change
 feature {NONE} -- Internal attributes
 
 	listener: EL_EVENT_LISTENER
+		attribute
+			Result := Default_listener
+		end
 
 feature {NONE} -- Constants
 
