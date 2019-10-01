@@ -84,7 +84,9 @@ feature -- Basic operations
 			lio.put_labeled_string ("class", generator)
 			lio.tab_right
 			lio.put_new_line
-			print_field_meta_data (lio, meta_data.field_array)
+			check attached meta_data as al_meta_data then
+				print_field_meta_data (lio, al_meta_data.field_array)
+			end
 			lio.tab_left
 			lio.put_new_line
 			lio.put_line ("end")
