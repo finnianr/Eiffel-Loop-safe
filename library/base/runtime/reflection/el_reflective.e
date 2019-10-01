@@ -40,10 +40,12 @@ feature {NONE} -- Initialization
 	initialize_fields
 		-- set fields that have not already been initialized with a value
 		do
-			meta_data.field_array.do_if (
-				agent {EL_REFLECTED_FIELD}.initialize (Current),
-				agent {EL_REFLECTED_FIELD}.is_uninitialized (Current)
-			)
+			check attached meta_data as al_meta_data then
+				al_meta_data.field_array.do_if (
+					agent {EL_REFLECTED_FIELD}.initialize (Current),
+					agent {EL_REFLECTED_FIELD}.is_uninitialized (Current)
+				)
+			end
 		end
 
 feature -- Access
