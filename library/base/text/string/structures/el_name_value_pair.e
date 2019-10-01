@@ -52,6 +52,9 @@ feature -- Element change
 feature -- Access
 
 	name: G
+		attribute
+			create Result.make_empty
+		end
 
 	value: G
 
