@@ -44,11 +44,13 @@ feature -- Basic operations
 			field_array: EL_REFLECTED_FIELD_ARRAY
 			i, field_count: INTEGER_32
 		do
-			field_array := Meta_data_by_type.item (Current).field_array
-			field_count := field_array.count
-			from i := 1 until i > field_count loop
-				write_field (field_array [i], a_writer)
-				i := i + 1
+			check attached Meta_data_by_type.item (Current) as al_item  then
+				field_array := al_item.field_array
+				field_count := field_array.count
+				from i := 1 until i > field_count loop
+					write_field (field_array [i], a_writer)
+					i := i + 1
+				end
 			end
 		end
 
