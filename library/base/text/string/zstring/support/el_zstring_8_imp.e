@@ -32,7 +32,7 @@ feature {NONE} -- Initialization
 	make_empty
 		do
 			Precursor
-			create {EL_ZSTRING} zstring.make_empty
+			create {EL_ZSTRING} internal_zstring.make_empty
 		end
 
 	make_from_zstring	(a_zstring: like zstring)
@@ -40,7 +40,7 @@ feature {NONE} -- Initialization
 			area := a_zstring.area
 			count := a_zstring.count
 			internal_hash_code := 0
-			zstring := a_zstring
+			internal_zstring := a_zstring
 		end
 
 feature -- Element change
@@ -119,4 +119,10 @@ feature -- Resizing
 feature {NONE} -- Implementation
 
 	zstring: EL_ZSTRING_IMPLEMENTATION
+		do
+			check attached internal_zstring as al_string then Result := al_string end
+		end
+
+	internal_zstring: detachable like zstring
+
 end
