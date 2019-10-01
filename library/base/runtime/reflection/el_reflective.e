@@ -50,14 +50,18 @@ feature -- Access
 
 	field_name_list: EL_STRING_LIST [STRING]
 		do
-			Result := meta_data.field_array.name_list
+			check attached meta_data as al_meta_data then
+				Result := al_meta_data.field_array.name_list
+			end
 		end
 
 feature {EL_REFLECTION_HANDLER} -- Access
 
 	field_table: EL_REFLECTED_FIELD_TABLE
 		do
-			Result := meta_data.field_table
+			check attached meta_data as al_meta_data then
+				Result := al_meta_data.field_table
+			end
 		end
 
 	meta_data: like Meta_data_by_type.item
