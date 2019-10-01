@@ -29,9 +29,8 @@ feature {NONE} -- Implementation
 
 feature {NONE} -- Type definitions
 
-	READABLE: READABLE_STRING_8
-		do
-			create Result
+	readable: READABLE_STRING_8
+		deferred
 		end
 
 feature {NONE} -- Constants

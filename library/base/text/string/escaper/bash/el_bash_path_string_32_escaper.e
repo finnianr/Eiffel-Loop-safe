@@ -22,4 +22,12 @@ inherit
 
 create
 	make
+
+feature {NONE} -- Type definitions
+
+	readable: STRING_32
+		do
+			create Result.make_empty
+		end
+
 end

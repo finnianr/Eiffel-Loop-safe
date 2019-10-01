@@ -25,4 +25,11 @@ inherit
 create
 	make, make_128_plus
 
+feature {NONE} -- Type definitions
+
+	readable: STRING_8
+		do
+			create Result.make_empty
+		end
+
 end

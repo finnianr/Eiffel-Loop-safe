@@ -224,7 +224,7 @@ feature {NONE} -- Unused
 	duplicate (n: INTEGER): like Current
 			--
 		do
-			create Result
+			create Result.make (n)
 		end
 
 feature -- 19.05
