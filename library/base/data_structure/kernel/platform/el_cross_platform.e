@@ -17,7 +17,7 @@ feature {NONE} -- Initialization
 	make_default
 			--
 		do
-			create implementation
+			create internal_implementation
 			implementation.set_interface (Current)
 			implementation.make
 		end
@@ -25,5 +25,10 @@ feature {NONE} -- Initialization
 feature {NONE} -- Implementation
 
 	implementation: I
+		once ("OBJECT")
+			check attached internal_implementation as al_item then Result := al_item end
+		end
+
+	internal_implementation: detachable like implementation
 
 end

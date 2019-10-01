@@ -12,6 +12,21 @@ note
 class
 	EL_PLATFORM_IMPLEMENTATION
 
+inherit
+	ANY
+		redefine
+			default_create
+		end
+
+feature {NONE} -- Initialization
+
+	default_create
+			--<Precursor>
+		do
+			Precursor
+			create interface
+		end
+
 feature {EL_CROSS_PLATFORM} -- Initialization
 
 	make
