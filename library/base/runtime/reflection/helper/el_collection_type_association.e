@@ -12,6 +12,9 @@ note
 class
 	EL_COLLECTION_TYPE_ASSOCIATION [G]
 
+create
+	make
+	
 feature {EL_REFLECTED_COLLECTION_TYPE_TABLE} -- Initialization
 
 	make

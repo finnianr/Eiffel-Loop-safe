@@ -19,6 +19,18 @@ class
 
 inherit
 	TO_SPECIAL [NATURAL]
+		redefine
+			default_create
+		end
+
+feature {NONE} -- Initialization
+
+	default_create
+			--<Precursor>
+		do
+			Precursor
+			create area.make_empty (0)
+		end
 
 feature -- Access
 

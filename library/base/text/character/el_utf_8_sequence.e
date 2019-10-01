@@ -14,8 +14,14 @@ class
 
 inherit
 	EL_UTF_SEQUENCE
+		rename
+			default_create as default_create_utf_sequence
+		end
 
 	STRING_HANDLER
+		select
+			default_create
+		end
 
 create
 	make

@@ -15,6 +15,9 @@ class
 inherit
 	EL_QUERY_CONDITION [G]
 
+create
+	make
+	
 feature {NONE} -- Initialization
 
 	make (a_routine: like routine)
