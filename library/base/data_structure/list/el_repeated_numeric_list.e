@@ -235,6 +235,11 @@ feature -- 19.05
 		end
 
 	cursor: CURSOR
+		do
+			check attached internal_cursor as al_result then Result := al_result end
+		end
+
+	internal_cursor: detachable like cursor
 
 	go_to (p: CURSOR)
 			--
