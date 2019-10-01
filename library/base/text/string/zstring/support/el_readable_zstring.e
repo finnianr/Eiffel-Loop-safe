@@ -1772,7 +1772,9 @@ feature {EL_READABLE_ZSTRING} -- Element change
 					elseif attached {PATH} l_reference as path then
 						append_string_general (path.name)
 					else
-						append_string_general (l_reference.out)
+						check attached l_reference then
+							append_string_general (l_reference.out)
+						end
 					end
 			else
 			end
