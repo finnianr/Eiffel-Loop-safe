@@ -24,7 +24,9 @@ feature -- Access
 
 	broken_pipe_message: STRING
 		do
-			Result := meaning (broken_pipe)
+			check has_meaning: attached meaning (broken_pipe) as al_result then
+				Result := al_result
+			end
 		end
 
 feature -- Status query
