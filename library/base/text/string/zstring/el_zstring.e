@@ -36,6 +36,8 @@ inherit
 			unescape,
 --			Removal
 			keep_head, keep_tail, left_adjust, remove_head, remove_tail, right_adjust
+		redefine
+			make_from_utf_8
 		end
 
 	EL_WRITEABLE
@@ -143,6 +145,16 @@ feature -- 19.05
 			-- Prepend the string representation of `b' at front.
 		do
 			Current.prepend_string_general (b.out)
+		end
+
+feature {NONE} -- Intialization
+
+	make_from_utf_8 (a_utf_8: READABLE_STRING_8)
+			--<Precursor>
+		do
+			create unencoded_area.make_empty (5)
+			create area.make_empty (5)
+			Precursor (a_utf_8)
 		end
 
 feature -- Access
