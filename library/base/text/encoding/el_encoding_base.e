@@ -73,7 +73,9 @@ feature -- Status query
 
 	is_valid (a_type, a_id: INTEGER): BOOLEAN
 		do
-			Result := Valid_types.has (a_type) and then Valid_id_sets.item (a_type).has (a_id)
+			check attached Valid_id_sets.item (a_type) as al_item then
+				Result := Valid_types.has (a_type) and then al_item.has (a_id)
+			end
 		end
 
 feature -- Status query

@@ -54,6 +54,7 @@ feature {NONE} -- Implementation
 				end
 				integer_formats.extend (f, key)
 			end
+			check attached f end
 			Result := f.formatted (n)
 		end
 

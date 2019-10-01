@@ -81,7 +81,9 @@ feature -- Element change
 				if attached {BAG [ANY]} variable_values.found_item as bag then
 					bag.wipe_out
 				end
-				variable_values.found_item.append (value)
+				check attached variable_values.found_item as al_found_item then
+					al_found_item.append (value)
+				end
 			end
 		end
 

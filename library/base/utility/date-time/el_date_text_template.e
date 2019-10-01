@@ -39,7 +39,9 @@ feature -- Access
 		do
 			across variable_values as name loop
 				if function_table.has_key (name.key) then
-					name.item.share (function_table.found_item (date))
+					check attached function_table.found_item as al_found_item then
+						name.item.share (al_found_item (date))
+					end
 				end
 			end
 			Result := part_list.joined_words
