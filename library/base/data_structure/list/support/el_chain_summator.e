@@ -18,13 +18,13 @@ class
 
 feature -- Access
 
-	sum (chain: EL_CHAIN [G]; value: FUNCTION [G, N]): N
+	sum (chain: EL_CHAIN [G]; value: FUNCTION [G, N]): detachable N
 		-- sum of `value' function across all items of `chain'
 		do
 			Result := sum_meeting (chain, value, create {EL_ANY_QUERY_CONDITION [G]})
 		end
 
-	sum_meeting (chain: EL_CHAIN [G]; value: FUNCTION [G, N]; condition: EL_QUERY_CONDITION [G]): N
+	sum_meeting (chain: EL_CHAIN [G]; value: FUNCTION [G, N]; condition: EL_QUERY_CONDITION [G]): detachable N
 		-- sum of `value' function across all items of `chain' meeting `condition'
 		require
 			valid_open_count: value.open_count = 1

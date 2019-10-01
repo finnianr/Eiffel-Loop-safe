@@ -24,7 +24,7 @@ inherit
 			occurrences as interval_occurrences,
 			set_area as set_array_area
 		redefine
-			start, back, forth
+			start, back, forth, make_array
 		end
 
 create
@@ -42,6 +42,12 @@ feature {NONE} -- Initialization
 		do
 			make_array (5)
 			create area.make_empty (0)
+		end
+
+	make_array (n: INTEGER_32)
+		do
+			create area.make_empty (n)
+			Precursor (n)
 		end
 
 feature -- Access
