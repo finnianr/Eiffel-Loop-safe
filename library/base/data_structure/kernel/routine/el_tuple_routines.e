@@ -56,7 +56,9 @@ feature -- Basic operations
 				end
 				if found then
 					if left_adjusted then
-						general.left_adjust
+						check attached general as al_general then
+							al_general.left_adjust
+						end
 					end
 					if is_path_field then
 						check attached general as al_general then

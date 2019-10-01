@@ -87,7 +87,9 @@ feature -- Element change
 						string.append (general)
 					end
 				else
-					str_8 := tuple.item (i).out
+					check attached tuple.item (i) as al_item then
+						str_8 := al_item.out
+					end
 					create string.make (str_8.count)
 					string.append (str_8)
 				end
