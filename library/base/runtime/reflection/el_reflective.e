@@ -69,7 +69,9 @@ feature -- Comparison
 
 	all_fields_equal (other: like Current): BOOLEAN
 		do
-			Result := meta_data.all_fields_equal (Current, other)
+			check attached meta_data as al_meta_data then
+				Result := al_meta_data.all_fields_equal (Current, other)
+			end
 		end
 
 feature -- Basic operations
