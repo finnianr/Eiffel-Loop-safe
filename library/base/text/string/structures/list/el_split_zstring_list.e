@@ -34,7 +34,7 @@ feature {NONE} -- Initialization
 			right_adjusted := False
 			string := a_string
 			area_v2 := a_string.split_intervals (delimiter).area
-			create internal_item.make_empty
+			create internal_internal_item.make_empty
 		end
 
 end

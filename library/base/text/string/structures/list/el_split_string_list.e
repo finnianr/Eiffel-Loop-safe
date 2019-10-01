@@ -48,6 +48,8 @@ feature {NONE} -- Initialization
 	make (a_string: like item; delimiter: READABLE_STRING_GENERAL)
 		do
 			create area_v2.make_empty (5)
+			create right_adjusted
+			create left_adjusted
 			initialize (a_string, delimiter, True)
 		end
 
@@ -60,7 +62,6 @@ feature {NONE} -- Initialization
 	make_intervals (a_capacity: INTEGER)
 		do
 			create string.make_empty
-			create internal_item.make_empty
 			left_adjusted := False
 			right_adjusted := False
 			Precursor (a_capacity)
@@ -290,6 +291,13 @@ feature {NONE} -- Implementation
 feature {EL_SPLIT_STRING_LIST} -- Internal attributes
 
 	internal_item: S
+		do
+			check attached internal_internal_item as al_item then
+				Result := al_item
+			end
+		end
+
+	internal_internal_item: detachable S
 
 	string: S
 end
