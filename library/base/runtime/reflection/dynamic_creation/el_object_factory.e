@@ -135,7 +135,7 @@ feature -- Factory
 			end
 		end
 
-	raw_instance_from_class_name (class_name: STRING): G
+	raw_instance_from_class_name (class_name: STRING): detachable G
 			--
 		require
 			valid_type: valid_type (class_name)
