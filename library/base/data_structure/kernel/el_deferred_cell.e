@@ -8,7 +8,7 @@ note
 				once ("OBJECT")
 					Result := new_node_source
 				end
-			
+
 
 	]"
 
@@ -44,6 +44,7 @@ feature -- Access
 				Result := new_item.last_result
 				actual_item := Result
 			end
+			check has_result: attached Result end
 		end
 
 feature {NONE} -- Internal attributes

@@ -31,6 +31,7 @@ feature {NONE} -- Type definitions
 
 	READABLE: READABLE_STRING_32
 		do
+			create Result
 		end
 
 feature {NONE} -- Constants

@@ -144,6 +144,7 @@ feature -- Measurement
 				Result := Result + item (i)
 				i := i + 1
 			end
+			check has_result: attached Result end
 		end
 
 end

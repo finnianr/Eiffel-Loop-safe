@@ -81,6 +81,7 @@ feature -- Access
 			if table.has_key (import_name (a_name, False)) then
 				Result := table.found_item
 			end
+			check has_result: attached Result end
 		end
 
 	name (a_value: N): STRING_8

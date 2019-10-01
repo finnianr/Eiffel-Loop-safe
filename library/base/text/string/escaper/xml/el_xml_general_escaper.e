@@ -60,6 +60,7 @@ feature -- Transformation
 				Result.append_code ((';').natural_32_code)
 				entities.extend (Result, code)
 			end
+			check has_result: attached Result end
 		end
 
 	append_escape_sequence (str: like new_string; code: NATURAL)
