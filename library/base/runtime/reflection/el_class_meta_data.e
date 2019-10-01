@@ -118,8 +118,8 @@ feature {NONE} -- Factory
 			if cached.has_key (field_names) then
 				Result := cached.found_item
 			else
-				create Result.make (Current, field_names)
-				cached.extend (Result, field_names)
+				--create Result.make (Current, field_names)
+				--cached.extend (Result, field_names)
 			end
 			check has_result: attached Result end
 		end
