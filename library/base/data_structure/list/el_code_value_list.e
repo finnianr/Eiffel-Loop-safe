@@ -55,4 +55,12 @@ feature -- Access
 		end
 
 	default_item: like item
+		attribute
+			check attached internal_default_item as al_item then Result := al_item end
+		end
+
+feature {NONE} -- Access Internal
+
+	internal_default_item: detachable like item
+
 end
