@@ -24,7 +24,7 @@ inherit
 			{ANY} has_key, found_item, count, put, iteration_position, indexes_map, capacity,
 				deleted_marks, content, keys, deleted_item_position, changeable_comparison_criterion
 		redefine
-			make
+			make, make_size
 		end
 
 	REFLECTOR
@@ -44,6 +44,12 @@ feature {NONE} -- Initialization
 		do
 			Precursor (array)
 			initialize
+		end
+
+	make_size (n: INTEGER_32)
+		do
+			Precursor (n)
+			create type_array.make_empty
 		end
 
 	initialize
