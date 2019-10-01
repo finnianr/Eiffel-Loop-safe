@@ -58,9 +58,7 @@ feature {NONE} -- Initialization
 
 	make_intervals (a_capacity: INTEGER)
 		do
-			if not attached string then
-				create string.make_empty
-			end
+			create string.make_empty
 			create internal_item.make_empty
 			left_adjusted := False
 			right_adjusted := False
