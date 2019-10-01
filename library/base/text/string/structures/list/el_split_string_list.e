@@ -47,6 +47,7 @@ feature {NONE} -- Initialization
 
 	make (a_string: like item; delimiter: READABLE_STRING_GENERAL)
 		do
+			create area_v2.make_empty (5)
 			initialize (a_string, delimiter, True)
 		end
 
