@@ -39,7 +39,9 @@ feature -- Access
 	met (item: G): BOOLEAN
 		-- True if `value' applied to `item' is equal to `target_value'
 		do
-			Result := Precursor (item) or else value.last_result.is_equal (target_value)
+			check attached value.last_result as al_last_result then
+				Result := Precursor (item) or else al_last_result.is_equal (target_value)
+			end
 		end
 
 feature {NONE} -- Implementation
