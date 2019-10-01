@@ -59,9 +59,15 @@ feature {NONE} -- Implementation
 feature {NONE} -- Internal attributes
 
 	final: like state
+		attribute
+			Result := agent (v: G) do end
+		end
 
 	item_number: INTEGER
 
 	state: PROCEDURE [G]
+		attribute
+			Result := agent (v: G) do end
+		end
 
 end
