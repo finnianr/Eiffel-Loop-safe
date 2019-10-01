@@ -29,7 +29,7 @@ feature
 
 	readable: EL_ZSTRING
 		do
-			create Result
+			create Result.make_empty
 		end
 
 end

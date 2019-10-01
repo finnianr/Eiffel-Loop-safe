@@ -61,9 +61,11 @@ feature -- Basic operations
 			operand: ANY
 		do
 			index := a_index
-			operand := make_routine.operands.item (index)
+			check attached make_routine.operands.item (index) as al_operand then
+				operand := al_operand
+			end
 			make_routine.extend_help (word_option, help_description, operand)
-			if attached {TYPE [ANY]} operand.generating_type as al_gen_type then
+			check has_type: attached {TYPE [ANY]} operand.generating_type as al_gen_type then
 				operand_type := al_gen_type
 			end
 			if Setter_types.has_key (operand_type) and then attached Setter_types.found_item as al_found_item then
