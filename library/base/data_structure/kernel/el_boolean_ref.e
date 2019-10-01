@@ -86,7 +86,11 @@ feature {NONE} -- Implementation
 
 	true_name: STRING
 		do
-			Result := Meta_data_by_type.item (Current).field_array.item (1).name
+			check attached Meta_data_by_type.item (Current) as al_meta_item and then
+					attached al_meta_item.field_array.item (1) as al_item_1
+			then
+				Result := al_item_1.name
+			end
 		end
 
 	false_name: STRING
