@@ -219,6 +219,7 @@ feature {NONE} -- Constants
 		require else
 			never_called: False
 		once
+			check has_result: attached Result end
 		end
 
 	Unencoded_character: CHARACTER = '%/026/'

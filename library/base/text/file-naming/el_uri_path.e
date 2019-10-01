@@ -220,6 +220,7 @@ feature {NONE} -- Type definitions
 
 	Type_parent: EL_DIR_URI_PATH
 		once
+			create Result
 		end
 
 feature -- Constants

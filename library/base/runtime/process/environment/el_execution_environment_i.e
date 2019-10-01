@@ -87,7 +87,9 @@ feature -- Access
 
 	executable_search_path: ZSTRING
 		do
-			Result := item ("PATH")
+			check has_item: attached item ("PATH") as al_item then
+				Result := al_item
+			end
 		end
 
 	executable_search_list: EL_DIRECTORY_LIST

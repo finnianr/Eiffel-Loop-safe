@@ -37,7 +37,9 @@ feature -- Access
 
 	last_exception: EXCEPTION
 		do
-			Result := manager.last_exception
+			check has_last_exception: attached manager.last_exception as al_last_exception then
+				Result := al_last_exception
+			end
 		end
 
 	last_out: STRING
@@ -66,6 +68,7 @@ feature -- Access
 			else
 				create Result.make_empty
 			end
+			check has_result: attached Result end
 		end
 
 	last_trace_lines: EL_SPLIT_STRING_LIST [STRING_32]

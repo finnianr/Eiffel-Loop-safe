@@ -33,6 +33,7 @@ feature {NONE} -- Implemenation
 				create Result.make_filled (c, n.to_integer_32)
 				Character_string_8_table.extend (Result, key)
 			end
+			check has_result: attached Result end
 		end
 
 feature {NONE} -- Constants

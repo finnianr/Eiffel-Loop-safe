@@ -133,6 +133,7 @@ feature -- Factory
 			if not attached Result then
 				Exception.raise_panic ("Could not instantiate class with alias: %"%S%"", [a_alias])
 			end
+			check has_result: attached Result end
 		end
 
 	raw_instance_from_class_name (class_name: STRING): detachable G
@@ -241,6 +242,7 @@ feature {EL_FACTORY_CLIENT} -- Implementation
 				initialize (instance)
 				Result := instance
 			end
+			check has_result: attached Result end
 		end
 
 	new_type_list (type_tuple: TUPLE): EL_TUPLE_TYPE_LIST [G]

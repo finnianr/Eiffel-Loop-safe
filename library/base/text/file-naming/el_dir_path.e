@@ -166,6 +166,7 @@ feature {NONE} -- Type definitions
 		require
 			never_called: False
 		once
+			create Result
 		end
 
 feature -- Constants

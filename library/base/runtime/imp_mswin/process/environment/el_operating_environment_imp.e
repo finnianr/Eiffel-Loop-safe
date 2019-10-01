@@ -33,7 +33,9 @@ feature -- Constants
 			environment: EXECUTION_ENVIRONMENT
 		once
 			create environment
-			Result := environment.get ("TEMP")
+			check has_var: attached environment.get ("TEMP") as al_var then
+				Result := al_var
+			end
 		end
 
 	Dynamic_module_extension: STRING = "dll"

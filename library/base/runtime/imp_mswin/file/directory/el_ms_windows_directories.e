@@ -62,7 +62,9 @@ feature -- Access
 
 	Executable_extensions_spec: ZSTRING
 		once
-			Result := item ("PATHEXT")
+			check has_item: attached item ("PATHEXT") as al_item then
+				Result := al_item
+			end
 		end
 
 feature -- Constants

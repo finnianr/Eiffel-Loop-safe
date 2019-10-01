@@ -121,6 +121,7 @@ feature {NONE} -- Factory
 				create Result.make (Current, field_names)
 				cached.extend (Result, field_names)
 			end
+			check has_result: attached Result end
 		end
 
 	new_field_list: ARRAYED_LIST [EL_REFLECTED_FIELD]
@@ -163,6 +164,7 @@ feature {NONE} -- Factory
 					create {EL_REFLECTED_REFERENCE [ANY]} Result.make (al_enclosing_object, index, name)
 				end
 			end
+			check has_result: attached Result end
 		end
 
 	new_reflected_field (index: INTEGER; name: STRING): EL_REFLECTED_FIELD
@@ -185,6 +187,7 @@ feature {NONE} -- Factory
 					Result.make (al_enclosing_object, index, name)
 				end
 			end
+			check has_result: attached Result end
 		end
 
 feature {NONE} -- Internal attributes

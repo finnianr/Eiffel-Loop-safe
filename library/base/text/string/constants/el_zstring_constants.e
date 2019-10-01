@@ -33,6 +33,7 @@ feature {NONE} -- Implemenation
 				create Result.make_filled (uc, n.to_integer_32)
 				Character_string_table.extend (Result, key)
 			end
+			check has_result: attached Result end
 		ensure
 			valid_result: Result.occurrences (uc) = n.to_integer_32
 		end

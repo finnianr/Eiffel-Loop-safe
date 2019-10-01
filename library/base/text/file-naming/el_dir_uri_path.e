@@ -61,6 +61,7 @@ feature {NONE} -- Type definitions
 
 	Type_file_path: EL_FILE_URI_PATH
 		once
+			create Result
 		end
 
 end

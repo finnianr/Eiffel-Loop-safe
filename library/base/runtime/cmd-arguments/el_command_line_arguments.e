@@ -208,6 +208,7 @@ feature -- ZSTRING conversion
 		 -- Converts ZSTRING objects
 		do
 			Result := Precursor (opt.to_string_32)
+			check has_result: attached Result end
 		end
 
 end

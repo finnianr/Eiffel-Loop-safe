@@ -40,6 +40,7 @@ feature {NONE} -- Factory
 			else
 				create {EL_ISO_8859_1_ZCODEC} Result.make
 			end
+			check has_result: attached Result end
 		end
 
 	new_codec_by_id (id: INTEGER): EL_ZCODEC

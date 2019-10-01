@@ -71,6 +71,7 @@ feature -- Conversion
 					list.forth
 				end
 			end
+			check has_result: attached Result end
 		end
 
 feature {NONE} -- Implementation

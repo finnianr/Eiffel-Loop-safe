@@ -142,6 +142,7 @@ feature {NONE} -- Implementation
 					Result := l_new
 				end
 			end
+			check has_result: attached Result end
 		end
 
 note
