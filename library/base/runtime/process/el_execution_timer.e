@@ -45,19 +45,12 @@ feature -- Access
 		local
 			was_timing: BOOLEAN
 		do
+			create Result.make_zero
 			if is_timing then
 				stop; was_timing := True
 			end
-			if duration_list.is_empty then
-				create Result.make_zero
-			else
-				across duration_list as duration loop
-					if duration.cursor_index = 1 then
-						Result := duration.item
-					else
-						Result := Result + duration.item
-					end
-				end
+			across duration_list as duration loop
+				Result := Result + duration.item
 			end
 			if was_timing then
 				resume
