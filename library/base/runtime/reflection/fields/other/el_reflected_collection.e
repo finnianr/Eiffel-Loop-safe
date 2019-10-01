@@ -33,7 +33,7 @@ feature {NONE} -- Initialization
 		do
 			Precursor (a_object, a_index, a_name)
 			if attached {like new_item} Read_functions_table.iteration_item (a_index) as al_new_item then
-				new_item := al_new_item
+				internal_new_item := al_new_item
 			end
 		end
 
@@ -104,6 +104,11 @@ feature {NONE} -- Implementation
 feature {NONE} -- Internal attributes
 
 	new_item: FUNCTION [EL_READABLE, G]
+		do
+			check attached internal_new_item as al_new_item then Result := al_new_item end
+		end
+
+	internal_new_item: detachable like new_item
 
 feature {NONE} -- Constants
 
