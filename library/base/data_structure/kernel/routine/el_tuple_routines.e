@@ -59,12 +59,14 @@ feature -- Basic operations
 						general.left_adjust
 					end
 					if is_path_field then
-						if type_id = File_path_type then
-							tuple.put_reference (create {EL_FILE_PATH}.make (general), list.index)
-						elseif type_id = Dir_path_type then
-							tuple.put_reference (create {EL_DIR_PATH}.make (general), list.index)
-						else
-							check invalid_path_type: False end
+						check attached general as al_general then
+							if type_id = File_path_type then
+								tuple.put_reference (create {EL_FILE_PATH}.make (al_general), list.index)
+							elseif type_id = Dir_path_type then
+								tuple.put_reference (create {EL_DIR_PATH}.make (al_general), list.index)
+							else
+								check invalid_path_type: False end
+							end
 						end
 					else
 						tuple.put_reference (general, list.index)
