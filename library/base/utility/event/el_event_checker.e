@@ -20,17 +20,17 @@ feature -- Element change
 	set_event_processor (an_event_processor: like event_processor)
 			-- Set event_processor to check periodically
 		do
-			event_processor := an_event_processor
+			internal_event_processor := an_event_processor
 		ensure
 			event_processor_assigned: event_processor = an_event_processor
 		end
-		
+
 	set_event_checking_frequency (a_checking_frequency: INTEGER)
-			-- 
+			--
 		do
 			checking_frequency := a_checking_frequency
 		end
-		
+
 
 feature {NONE} -- Basic operations
 
@@ -48,9 +48,14 @@ feature {NONE} -- Basic operations
 feature -- Implementation
 
 	event_processor: EL_EVENT_PROCESSOR
+		do
+			check attached internal_event_processor as al_item then Result := al_item end
+		end
+
+	internal_event_processor: detachable like event_processor
 
 	check_count: INTEGER
-	
+
 	checking_frequency: INTEGER
-	
+
 end
