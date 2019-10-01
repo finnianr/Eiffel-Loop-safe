@@ -159,7 +159,9 @@ feature {NONE} -- Implementation
 			l_meta_data: like Meta_data_by_type.item; table: EL_REFLECTED_FIELD_TABLE
 			query_results: LIST [EL_REFLECTED_FIELD]
 		do
-			l_meta_data := meta_data
+			check attached meta_data as al_meta_data then
+				l_meta_data := al_meta_data
+			end
 			table := l_meta_data.field_table
 			table.query_by_type (value_table.value_type)
 			check conforms: attached {LIST [EL_REFLECTED_FIELD]} table.last_query as al_last_query then
