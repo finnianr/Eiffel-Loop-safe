@@ -235,7 +235,9 @@ feature {EL_CLASS_META_DATA} -- Implementation
 		local
 			table: EL_REFLECTED_FIELD_TABLE; l_meta_data: like meta_data
 		do
-			l_meta_data := meta_data
+			check attached meta_data as al_meta_data then
+				l_meta_data := al_meta_data
+			end
 			table := l_meta_data.field_table
 			from table.start until table.after loop
 				if attached {EL_REFLECTED_REFERENCE [ANY]} table.item_for_iteration as ref_field
