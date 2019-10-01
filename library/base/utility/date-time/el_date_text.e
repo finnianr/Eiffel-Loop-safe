@@ -203,8 +203,11 @@ feature {NONE} -- Implementation
 
 	template (format: STRING): EL_DATE_TEXT_TEMPLATE
 		do
-			if template_table.has_key (format) then
-				Result := template_table.found_item
+			if
+				template_table.has_key (format) and then
+				attached template_table.found_item as al_found_item
+			then
+				Result := al_found_item
 			else
 				create Result.make (format, function_table)
 				template_table.extend (Result, format)
