@@ -22,14 +22,16 @@ feature -- Access
 			n, v: like field_value; str: STRING
 		do
 			v := value (a_object)
-			if v = n.zero then
-				Result := Zero
-			elseif v = n.one then
-				Result := One
-			else
-				str := empty_once_string_8
-				append (str, v)
-				Result := str.twin
+			check attached n then
+				if v = n.zero then
+					Result := Zero
+				elseif v = n.one then
+					Result := One
+				else
+					str := empty_once_string_8
+					append (str, v)
+					Result := str.twin
+				end
 			end
 		end
 
