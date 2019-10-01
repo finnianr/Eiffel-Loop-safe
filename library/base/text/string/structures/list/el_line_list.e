@@ -32,6 +32,11 @@ feature -- 19.05 Issues
 	new_cursor: ITERATION_CURSOR [S]
 			-- <Precursor>
 			-- New {ITERATION_CURSOR} based on Current.
+		do
+			check attached internal_new_cursor as al_result then Result := al_result end
+		end
+
+	internal_new_cursor: detachable like new_cursor
 
 feature -- Access
 
