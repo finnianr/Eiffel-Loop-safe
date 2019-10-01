@@ -28,11 +28,21 @@ inherit
 			is_equal, copy
 		redefine
 			extend,
-			wipe_out
+			wipe_out,
+			make
 		end
 
 create
 	make
+
+feature {NONE} -- Initialization
+
+	make (n: INTEGER)
+			--<Precursor>
+		do
+			create area_v2.make_empty (n)
+			Precursor (n)
+		end
 
 feature -- 19.05
 
