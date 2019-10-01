@@ -41,6 +41,7 @@ feature -- Access
 			else
 				Exception.raise_developer ("Shared `Singleton_table' does not have type %S", [({G}).name])
 			end
+			check has_result: attached Result end
 		end
 
 end
