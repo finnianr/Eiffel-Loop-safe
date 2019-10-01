@@ -66,7 +66,9 @@ feature -- Conversion
 					if attached {READABLE_STRING_GENERAL} list.item as str then
 						Result.extend (str)
 					else
-						Result.extend (list.item.out)
+						check attached list.item as al_list_item then
+							Result.extend (al_list_item.out)
+						end
 					end
 					list.forth
 				end
