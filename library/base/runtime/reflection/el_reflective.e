@@ -76,7 +76,9 @@ feature -- Basic operations
 
 	print_fields (lio: EL_LOGGABLE)
 		do
-			meta_data.print_fields (Current, lio)
+			check attached meta_data as al_meta_data then
+				al_meta_data.print_fields (Current, lio)
+			end
 		end
 
 	print_meta_data (lio: EL_LOGGABLE)
