@@ -124,7 +124,9 @@ feature -- Element change
 				other_field := table_other.item_for_iteration
 				if not except_indices.has (other_field.index) then
 					if table.has_name (other_field.name, Current) then
-						field := table.found_item
+						check attached table.found_item as al_found_item then
+							field := al_found_item
+						end
 						if other_field.type_id = field.type_id then
 							field.set (Current, other_field.value (other))
 						end
