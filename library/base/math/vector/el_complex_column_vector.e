@@ -30,26 +30,33 @@ feature {NONE} -- Initialization
 			--
 		do
 			Precursor (max_index)
-			create imaginary.make (max_index)
+			create internal_imaginary.make (max_index)
 		end
 
 	make_from_other (other: like current)
 			--
 		do
 			make_from_array (other)
-			create imaginary.make_from_array (other.imaginary)
+			create internal_imaginary.make_from_array (other.imaginary)
 		end
 
 	make_from_pointer (ptr_real, ptr_imaginery: POINTER; max_index, element_bytes: INTEGER)
 			--
 		do
 			make_real_from_pointer (ptr_real, max_index, element_bytes)
-			create imaginary.make_from_pointer (ptr_imaginery, max_index, element_bytes)
+			create internal_imaginary.make_from_pointer (ptr_imaginery, max_index, element_bytes)
 		end
 
 feature -- Access
 
 	imaginary: EL_COLUMN_VECTOR [G]
+		attribute
+			check attached internal_imaginary as al_result then Result := al_result end
+		end
+
+feature {NONE} -- Access Internal
+
+	internal_imaginary: detachable like imaginary
 
 feature -- Duplication
 
