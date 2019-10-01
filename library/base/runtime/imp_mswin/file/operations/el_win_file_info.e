@@ -200,6 +200,7 @@ feature {NONE} -- Constants
 	Default_internal_name: MANAGED_POINTER
 		once ("PROCESS")
 			create internal_name.make (0)
+			Result := internal_name
 		end
 
 	File_info: FILE_INFO

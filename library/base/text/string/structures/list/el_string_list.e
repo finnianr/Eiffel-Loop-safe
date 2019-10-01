@@ -77,6 +77,7 @@ feature -- Access
 
 	subchain (index_from, index_to: INTEGER ): EL_STRING_LIST [S]
 		do
+			create Result.make_empty
 			if attached {EL_ARRAYED_LIST [S]} array_subchain (index_from, index_to) as l_list then
 				create Result.make_from_array (l_list.to_array)
 			end
