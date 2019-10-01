@@ -53,7 +53,9 @@ feature -- Access
 	User_local: EL_DIR_PATH
 		-- Windows 7: C:\Users\xxxx\AppData\Local
 		once
-			Result := Home_directory_path -- Counter intuitive path from EXECUTION_ENVIRONMENT
+			check has_home: attached Home_directory_path as al_path then
+				Result := al_path -- Counter intuitive path from EXECUTION_ENVIRONMENT
+			end
 		end
 
 	Users: EL_DIR_PATH
