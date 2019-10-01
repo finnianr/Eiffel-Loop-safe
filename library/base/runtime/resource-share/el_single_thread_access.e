@@ -15,6 +15,9 @@ note
 class
 	EL_SINGLE_THREAD_ACCESS
 
+create
+	make_default
+
 feature {NONE} -- Initialization
 
 	make_default

@@ -33,7 +33,11 @@ feature -- Access
 			chain.push_cursor
 			from chain.start until chain.after loop
 				if condition.met (chain.item) then
-					Result := Result + value (chain.item)
+					if attached Result then
+						Result := Result + value (chain.item)
+					else
+						Result := value (chain.item)
+					end
 				end
 				chain.forth
 			end
