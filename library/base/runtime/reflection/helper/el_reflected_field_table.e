@@ -20,6 +20,8 @@ inherit
 			{EL_REFLECTED_FIELD_TABLE} all
 			{ANY} extend, found, found_item, count, start, after, forth, item_for_iteration, key_for_iteration, has_key,
 				current_keys, off, has
+		redefine
+			make_table
 		end
 
 	EL_REFLECTION_HANDLER
@@ -41,6 +43,13 @@ feature {NONE} -- Initialization
 		do
 			make_equal (n)
 			create last_query.make (0)
+		end
+
+	make_table (n: INTEGER_32)
+			--<Precursor>
+		do
+			create last_query.make_empty
+			Precursor (n)
 		end
 
 feature -- Access
