@@ -31,6 +31,7 @@ feature {NONE} -- Initialization
 		require
 			is_console: attached {CONSOLE} console
 		do
+			create last_string.make_empty
 			set_path (console.path)
 			file_pointer := console.file_pointer
 			mode := console.mode
