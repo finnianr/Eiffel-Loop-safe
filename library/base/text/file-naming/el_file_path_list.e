@@ -34,6 +34,7 @@ feature {NONE} -- Initialization
 		require
 			finite: attached {FINITE [EL_FILE_PATH]} list
 		do
+			create area_v2.make_empty (5)
 			if attached {FINITE [EL_FILE_PATH]} list as finite then
 				make_with_count (finite.count)
 				across list as it loop
