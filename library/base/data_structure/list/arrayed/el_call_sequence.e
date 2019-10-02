@@ -37,7 +37,9 @@ feature -- Basic operations
 		do
 			push_cursor
 			from start until after loop
-				call_action.call (item)
+				check attached call_action as al_call_action then
+					al_call_action.call (item)
+				end
 				forth
 			end
 			pop_cursor
@@ -45,6 +47,6 @@ feature -- Basic operations
 
 feature {NONE} -- Implementation
 
-	call_action: PROCEDURE [CALL_ARGS]
+	call_action: detachable PROCEDURE [CALL_ARGS]
 
 end
