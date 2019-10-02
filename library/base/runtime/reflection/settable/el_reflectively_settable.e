@@ -31,6 +31,7 @@ feature {NONE} -- Initialization
 
 	make_default
 		do
+			create field_table.make (5)
 			if not attached field_table and then
 				attached Meta_data_by_type.item (Current) as al_item and then
 				attached al_item.field_table as al_field_table
