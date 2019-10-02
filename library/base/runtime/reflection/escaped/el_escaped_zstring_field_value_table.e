@@ -46,6 +46,10 @@ feature {NONE} -- Initialization
 
 	make (n: INTEGER; a_escaper: like escaper)
 		do
+			create deleted_marks.make_empty (5)
+			create indexes_map.make_empty (5)
+			create keys.make_empty (5)
+			create content.make_empty (5)
 			make_table (n)
 			escaper := a_escaper
 		end
